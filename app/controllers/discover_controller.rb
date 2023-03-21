@@ -1,6 +1,5 @@
-class DiscoverController < ApplicationController
+# frozen_string_literal: true
 
-  def index
-    
-  end
+class DiscoverController < ApplicationController
+  def index; end
 end
