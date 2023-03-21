@@ -2,6 +2,6 @@
 
 Rails.application.routes.draw do
   root 'home#index'
-
-  resources :users, only: %i[new show]
+  get '/register', to: 'users#new'
+  resources :users, only: %i[show create]
 end
