@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/dawson/turing_work/3mod/projects/viewing_party_d-w/config/environment.rb": {
+      "/Users/weston/Desktop/viewing_party/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -12,7 +12,7 @@
           1
         ]
       },
-      "/Users/dawson/turing_work/3mod/projects/viewing_party_d-w/config/application.rb": {
+      "/Users/weston/Desktop/viewing_party/config/application.rb": {
         "lines": [
           null,
           null,
@@ -55,7 +55,7 @@
           null
         ]
       },
-      "/Users/dawson/turing_work/3mod/projects/viewing_party_d-w/config/boot.rb": {
+      "/Users/weston/Desktop/viewing_party/config/boot.rb": {
         "lines": [
           null,
           null,
@@ -65,7 +65,7 @@
           1
         ]
       },
-      "/Users/dawson/turing_work/3mod/projects/viewing_party_d-w/config/environments/test.rb": {
+      "/Users/weston/Desktop/viewing_party/config/environments/test.rb": {
         "lines": [
           null,
           null,
@@ -131,7 +131,7 @@
           null
         ]
       },
-      "/Users/dawson/turing_work/3mod/projects/viewing_party_d-w/config/initializers/assets.rb": {
+      "/Users/weston/Desktop/viewing_party/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -149,7 +149,7 @@
           null
         ]
       },
-      "/Users/dawson/turing_work/3mod/projects/viewing_party_d-w/config/initializers/content_security_policy.rb": {
+      "/Users/weston/Desktop/viewing_party/config/initializers/content_security_policy.rb": {
         "lines": [
           null,
           null,
@@ -160,41 +160,6 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/dawson/turing_work/3mod/projects/viewing_party_d-w/config/initializers/filter_parameter_logging.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/dawson/turing_work/3mod/projects/viewing_party_d-w/config/initializers/inflections.rb": {
-        "lines": [
           null,
           null,
           null,
@@ -214,7 +179,42 @@
           null
         ]
       },
-      "/Users/dawson/turing_work/3mod/projects/viewing_party_d-w/config/initializers/permissions_policy.rb": {
+      "/Users/weston/Desktop/viewing_party/config/initializers/filter_parameter_logging.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/weston/Desktop/viewing_party/config/initializers/inflections.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/weston/Desktop/viewing_party/config/initializers/permissions_policy.rb": {
         "lines": [
           null,
           null,
@@ -230,7 +230,7 @@
           null
         ]
       },
-      "/Users/dawson/turing_work/3mod/projects/viewing_party_d-w/spec/factories/parties.rb": {
+      "/Users/weston/Desktop/viewing_party/spec/factories/parties.rb": {
         "lines": [
           1,
           1,
@@ -243,7 +243,7 @@
           null
         ]
       },
-      "/Users/dawson/turing_work/3mod/projects/viewing_party_d-w/spec/factories/user_parties.rb": {
+      "/Users/weston/Desktop/viewing_party/spec/factories/user_parties.rb": {
         "lines": [
           1,
           1,
@@ -253,7 +253,7 @@
           null
         ]
       },
-      "/Users/dawson/turing_work/3mod/projects/viewing_party_d-w/spec/factories/users.rb": {
+      "/Users/weston/Desktop/viewing_party/spec/factories/users.rb": {
         "lines": [
           1,
           1,
@@ -263,44 +263,26 @@
           null
         ]
       },
-      "/Users/dawson/turing_work/3mod/projects/viewing_party_d-w/config/routes.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/dawson/turing_work/3mod/projects/viewing_party_d-w/app/helpers/application_helper.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/dawson/turing_work/3mod/projects/viewing_party_d-w/app/models/party.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/dawson/turing_work/3mod/projects/viewing_party_d-w/app/models/application_record.rb": {
+      "/Users/weston/Desktop/viewing_party/config/routes.rb": {
         "lines": [
           null,
           null,
           1,
           1,
+          null,
+          1,
           null
         ]
       },
-      "/Users/dawson/turing_work/3mod/projects/viewing_party_d-w/spec/models/user_party_spec.rb": {
+      "/Users/weston/Desktop/viewing_party/app/helpers/application_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/weston/Desktop/viewing_party/spec/models/party_spec.rb": {
         "lines": [
           1,
           null,
@@ -312,7 +294,7 @@
           null
         ]
       },
-      "/Users/dawson/turing_work/3mod/projects/viewing_party_d-w/app/models/user_party.rb": {
+      "/Users/weston/Desktop/viewing_party/app/models/party.rb": {
         "lines": [
           1,
           1,
@@ -320,7 +302,16 @@
           null
         ]
       },
-      "/Users/dawson/turing_work/3mod/projects/viewing_party_d-w/spec/models/user_spec.rb": {
+      "/Users/weston/Desktop/viewing_party/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/weston/Desktop/viewing_party/spec/models/user_party_spec.rb": {
         "lines": [
           1,
           null,
@@ -332,15 +323,67 @@
           null
         ]
       },
-      "/Users/dawson/turing_work/3mod/projects/viewing_party_d-w/app/models/user.rb": {
+      "/Users/weston/Desktop/viewing_party/app/models/user_party.rb": {
         "lines": [
           1,
           1,
           1,
+          null
+        ]
+      },
+      "/Users/weston/Desktop/viewing_party/spec/models/user_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/weston/Desktop/viewing_party/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/weston/Desktop/viewing_party/app/controllers/home_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          5,
+          null,
+          null
+        ]
+      },
+      "/Users/weston/Desktop/viewing_party/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/weston/Desktop/viewing_party/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1679362591
+    "timestamp": 1679365996
   }
 }
