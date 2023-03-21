@@ -18,7 +18,7 @@ describe 'home page' do
   it 'has a button to create a new user' do
     expect(page).to have_button('Create New User')
     click_button('Create New User')
-    expect(current_path).to eq(new_user_path)
+    expect(current_path).to eq(register_path)
   end
 
   it 'lists the existing users which links to the user\'s dashboard' do
