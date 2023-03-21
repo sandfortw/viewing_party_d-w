@@ -32,4 +32,4 @@
 
 #Ignore different git messages
 
-/coverage/*coverage
+/coverage/*
