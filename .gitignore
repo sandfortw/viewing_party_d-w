@@ -31,3 +31,5 @@
 /config/master.key
 
 #Ignore different git messages
+
+/coverage/*coverage
