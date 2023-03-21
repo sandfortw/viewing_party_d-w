@@ -52,11 +52,11 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  gem 'pry'
   gem 'capybara'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'orderly'
+  gem 'pry'
   gem 'rspec-rails', '~> 6.0.0'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'simplecov', require: false, group: :test

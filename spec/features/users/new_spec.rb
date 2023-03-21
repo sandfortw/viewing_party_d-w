@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'the user new page' do
@@ -17,18 +19,17 @@ describe 'the user new page' do
     it 'has a button to register' do
       expect(page).to have_button('Register')
     end
-
   end
   describe 'happy path' do
     it 'registers the user with valid information' do
       fill_in :name, with: 'Dawson'
       fill_in :email, with: 'DawsonTimmons@gmail.com'
       click_button 'Register'
-      
+
       expect(current_path).to eq(user_path(User.last))
     end
   end
-  
+
   describe 'sad path' do
     before do
       User.create!(name: 'Weston', email: 'Sandfortw@gmail.com')
@@ -37,19 +38,17 @@ describe 'the user new page' do
       fill_in :name, with: 'Charles'
       fill_in :email, with: 'Sandfortw@gmail.com'
       click_button 'Register'
-      
+
       expect(current_path).to eq(register_path)
-      expect(page).to have_content("Email has already been taken")
+      expect(page).to have_content('Email has already been taken')
     end
-  
+
     it 'does not submit with empty fields' do
       click_button 'Register'
 
       expect(current_path).to eq(register_path)
       expect(page).to have_content("Email can't be blank, Name can't be blank")
     end
-    #TODO: Validate that the input is a valid email
-    
+    # TODO: Validate that the input is a valid email
   end
-
 end
