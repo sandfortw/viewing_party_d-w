@@ -7,7 +7,7 @@ describe 'movies page' do
       visit user_discover_path(@user)
       click_button "Find Top Rated Movies"
     end
-    it 'should have the title of the top 20 movies (3)' do
+    it 'should have the title of the top 20 movies (3)', :vcr do
       expect(current_path).to eq(user_movies_path(@user))
       expect(page).to have_content("The Godfather")
     end
