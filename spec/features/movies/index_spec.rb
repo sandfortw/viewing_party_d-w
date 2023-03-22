@@ -18,7 +18,7 @@ describe 'movies page' do
       expect(page).to have_link('Cuando Sea Joven')
     end
 
-    it 'a title links to its show page' do
+    it 'a title links to its show page', :vcr do
       click_link('The Godfather')
       expect(current_path).to eq(user_movie_path(@user, 238))
     end
@@ -54,7 +54,7 @@ describe 'movies page' do
       expect(page).to have_link('Forrest Gump')
     end
 
-    it 'each results should be a link' do
+    it 'each results should be a link', :vcr do
       click_link('Forrest Gump')
       expect(current_path).to eq(user_movie_path(@user, 13))
     end
