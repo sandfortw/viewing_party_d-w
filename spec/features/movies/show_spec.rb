@@ -23,7 +23,7 @@ describe 'movie details page' do
       expect(page).to have_content('Runtime 1hr 30min')
     end
 
-    xit 'should have the genres for a movie' do
+    it 'should have the genres for a movie' do
       expect(page).to have_content('Genre: Animation, Comedy, Fantasy, Adventure, Family')
     end
   end

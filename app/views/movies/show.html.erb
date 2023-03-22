@@ -2,5 +2,6 @@
 
 <section id="headline">
   <p>Vote <%= @movie[:vote_average]%></p>
-  <p>Runtime <%= runtime_format(@movie[:runtime]) %>
+  <p>Runtime <%= runtime_format(@movie[:runtime]) %></p>
+  <p>Genre: <%= @movie[:genres].map{|g| g[:name]}.join(", ") %>
 </section>
