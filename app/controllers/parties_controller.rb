@@ -1,6 +1,5 @@
-class PartiesController < ApplicationController
+# frozen_string_literal: true
 
-  def new
-    
-  end
+class PartiesController < ApplicationController
+  def new; end
 end
