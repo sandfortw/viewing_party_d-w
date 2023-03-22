@@ -11,7 +11,11 @@ class MoviesController < ApplicationController
   end
 
   def show
-
+    conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
+      faraday.headers['Authorization'] = ENV['movie_db_token']
+    end
+    response = conn.get('/3/movie/top_rated?&page=1')
+    data = JSON.parse(response.body, symbolize_names: true)
+    @movies = data[:results]
   end
-
 end

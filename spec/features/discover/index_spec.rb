@@ -16,7 +16,7 @@ describe 'discover movies page' do
       expect(page).to have_button "Find Top Rated Movies"
     end
 
-    it "when clicked it should take us to movie results" do
+    it "when clicked it should take us to movie results", :vcr do
       click_button "Find Top Rated Movies"
       expect(current_path).to eq(user_movies_path(@user))
     end
