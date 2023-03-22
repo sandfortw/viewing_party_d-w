@@ -8,6 +8,7 @@ class MoviesController < ApplicationController
     response = conn.get('/3/movie/top_rated?&page=1')
     data = JSON.parse(response.body, symbolize_names: true)
     @movies = data[:results]
+    @user = User.find(params[:user_id])
   end
 
   def show

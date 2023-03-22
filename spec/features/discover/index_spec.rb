@@ -34,10 +34,16 @@ describe 'discover movies page' do
 
     it "should have a button to search" do
       within("#search_form") do
-        expect(page).to have_button "Search"
+        expect(page).to have_button "Find Movies"
       end
     end
-
-
+  
+    it "redirects the user to the movie index once the user fills in the search field and clicks 'Find Movies'" do
+      VCR.use_cassette("top_20") do
+        fill_in :search, with: "Test"
+        click_button "Find Movies"
+        expect(current_path).to eq(user_movies_path(@user))
+      end
+    end
   end
 end

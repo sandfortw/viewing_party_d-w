@@ -31,5 +31,21 @@ describe 'movies page' do
       expect(page).to have_content('12 Angry Men Vote Average: 8.5')
     end
 
+    it 'should have a button that links to the Discover Movies page' do
+      expect(page).to have_button("Discover Movies")
+      click_button("Discover Movies")
+      expect(current_path).to eq(user_discover_path(@user))
+    end
+  end
+
+  context 'search for a movie(Forrest Gump)' do 
+    before do 
+      VCR.use_cassette("Forrest Gump") do
+        @user = User.create!(name: 'Homer', email: 'Homer@springfield.com')
+        visit user_discover_path(@user)
+        
+      end
+    end
+
   end
 end
