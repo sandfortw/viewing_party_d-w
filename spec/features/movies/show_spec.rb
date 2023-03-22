@@ -33,7 +33,10 @@ describe 'movie details page' do
       expect(page).to have_button('Create Viewing Party for Shrek')
     end
 
-    xit 'when the button is clicked, it goes somewhere else' # TODO
+    it 'when the button is clicked, it goes somewhere else' do
+      click_button('Create Viewing Party for Shrek')
+      expect(current_path).to eq("/users/#{@user.id}/movies/808/viewing-party/new")
+    end
   end
 
   context 'more details' do
@@ -68,6 +71,12 @@ describe 'movie details page' do
         expect(page).to have_content('Shrek is a masterpiece! It helped subvert the Disney Renaissance formula with great humor and heart. Myers, Murphy, Diaz and Lithgow did a great job voicing the characters. Now that this film is 20 years old, I am glad it existed.')
         expect(page).to have_content('Author: GenerationofSwine')
         expect(page).to have_content('Author: 핸키')
+      end
+    end
+
+    it 'should have a count of the number of reviews' do
+      within('#reviews') do
+        expect(page).to have_content('Review Count: 3')
       end
     end
   end
