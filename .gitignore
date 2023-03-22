@@ -33,3 +33,5 @@
 #Ignore different git messages
 
 /coverage/*
+# Ignore application configuration
+/config/application.yml
