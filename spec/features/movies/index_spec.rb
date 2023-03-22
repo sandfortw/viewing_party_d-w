@@ -43,9 +43,15 @@ describe 'movies page' do
       VCR.use_cassette("Forrest Gump") do
         @user = User.create!(name: 'Homer', email: 'Homer@springfield.com')
         visit user_discover_path(@user)
-        
+        fill_in :search, with: "Forrest Gump"
+        click_button "Find Movies"
       end
     end
+
+      it 'should have the title of the movie(Forrest Gump)' do
+        expect(page).to have_content('Forrest Gump')
+      end
+    
 
   end
 end
