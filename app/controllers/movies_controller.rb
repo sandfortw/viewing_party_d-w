@@ -21,5 +21,19 @@ class MoviesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
+      faraday.headers['Authorization'] = ENV['movie_db_token']
+    end
+    @user = User.find(params[:user_id])
+    response = conn.get("3/movie/#{params[:id]}")
+    data = JSON.parse(response.body, symbolize_names: true)
+    @movie = data[:results]
+    response = conn.get("3/movie/#{params[:id]}/credits")
+    data = JSON.parse(response.body, symbolize_names: true)
+    @cast = data[:results]
+    response = conn.get("3/movie/#{params[:id]}/reviews")
+    data = JSON.parse(response.body, symbolize_names: true)
+    @reviews = data[:results]
+  end
 end

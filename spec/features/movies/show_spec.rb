@@ -6,12 +6,12 @@ describe 'movie details page' do
   before do
     VCR.use_cassette('Shrek') do
       @user = User.create!(name: 'Donkey', email: 'donkey@swampify.com')
-      visit user_movie_path(@user)
+      visit user_movie_path(@user, 808)
     end
   end
 
   context 'basic details' do
-    xit 'should show the details for a movie' do
+    it 'should show the details for a movie' do
       expect(page).to have_content('Shrek')
     end
 
