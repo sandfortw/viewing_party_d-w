@@ -28,10 +28,10 @@ class MoviesController < ApplicationController
     @user = User.find(params[:user_id])
     response = conn.get("3/movie/#{params[:id]}")
     data = JSON.parse(response.body, symbolize_names: true)
-    @movie = data[:results]
+    @movie = data
     response = conn.get("3/movie/#{params[:id]}/credits")
     data = JSON.parse(response.body, symbolize_names: true)
-    @cast = data[:results]
+    @cast = data[:cast]
     response = conn.get("3/movie/#{params[:id]}/reviews")
     data = JSON.parse(response.body, symbolize_names: true)
     @reviews = data[:results]

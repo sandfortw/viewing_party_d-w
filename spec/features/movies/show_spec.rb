@@ -15,11 +15,11 @@ describe 'movie details page' do
       expect(page).to have_content('Shrek')
     end
 
-    xit 'should have the vote for a movie' do
+    it 'should have the vote for a movie' do
       expect(page).to have_content('Vote 7.717')
     end
 
-    xit 'should have the formatted runtime for the movie' do
+    it 'should have the formatted runtime for the movie' do
       expect(page).to have_content('Runtime 1hr 30min')
     end
 
