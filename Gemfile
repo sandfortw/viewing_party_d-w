@@ -61,6 +61,8 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 5.0'
   gem 'simplecov', require: false, group: :test
   gem 'launchy'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do
@@ -73,3 +75,6 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
+gem 'figaro'
+
