@@ -39,10 +39,19 @@ describe 'discover movies page' do
     end
   
     it "redirects the user to the movie index once the user fills in the search field and clicks 'Find Movies'" do
-      VCR.use_cassette("top_20") do
+      VCR.use_cassette("search_test") do
         fill_in :search, with: "Test"
         click_button "Find Movies"
         expect(current_path).to eq(user_movies_path(@user))
+      end
+    end
+
+    it 'flashes a message when field is blank' do
+      VCR.use_cassette("search_test") do
+        fill_in :search, with: ""
+        click_button "Find Movies"
+        expect(current_path).to eq( user_discover_path(@user))
+        expect(page).to have_content("Field cannot be blank")
       end
     end
   end
