@@ -29,7 +29,7 @@ class MoviesController < ApplicationController
     response = conn.get("3/movie/#{params[:id]}")
     data = JSON.parse(response.body, symbolize_names: true)
     @movie = data
-    response = conn.get("3/movie/#{params[:id]}/credits")
+    response = conn.get("3/movie/#{params[:id]}/credits?&page=1")
     data = JSON.parse(response.body, symbolize_names: true)
     @cast = data[:cast]
     response = conn.get("3/movie/#{params[:id]}/reviews")

@@ -29,7 +29,7 @@ describe 'movie details page' do
   end
 
   context 'viewing party button' do
-    xit 'should have a button to create a viewing party' do
+    it 'should have a button to create a viewing party' do
       expect(page).to have_button('Create Viewing Party for Shrek')
     end
 
@@ -37,12 +37,16 @@ describe 'movie details page' do
   end
 
   context 'more details' do
-    xit 'should have the summary for the movie' do
-      expect(page).to have_content("It ain't easy bein' green -- especially if you're a likable (albeit smelly) ogre named Shrek. On a mission to retrieve a gorgeous princess from the clutches of a fire-breathing dragon, Shrek teams up with an unlikely compatriot -- a wisecracking donkey.")
+    it 'should have the summary for the movie' do
+      within("#summary") do
+        expect(page).to have_content("Summary")
+        expect(page).to have_content("It ain't easy bein' green -- especially if you're a likable (albeit smelly) ogre named Shrek. On a mission to retrieve a gorgeous princess from the clutches of a fire-breathing dragon, Shrek teams up with an unlikely compatriot -- a wisecracking donkey.")
+      end
     end
 
-    xit 'should have the first 10 cast members for a movie' do
-      within('cast') do
+    it 'should have the first 10 cast members for a movie' do
+      within('#cast') do
+        expect(page).to have_content("Cast")
         expect(page).to have_content("Mike Myers")
         expect(page).to have_content("Eddie Murphy")
         expect(page).to have_content("Cameron Diaz")
@@ -54,12 +58,12 @@ describe 'movie details page' do
         expect(page).to have_content("Bobby Block")
         expect(page).to have_content("Chris Miller")
         expect(page).to_not have_content("Cody Cameron") #Number 11
-        expect(page).to have_css("cast_member", count: 10)
+        expect(page).to have_css("#cast_member", count: 10)
       end
     end
 
-    xit 'should have the reviews for the movie' do
-      within('reviews') do
+    it 'should have the reviews for the movie' do
+      within('#reviews') do
         expect(page).to have_content("Author: Cwf97")
         expect(page).to have_content("Shrek is a masterpiece! It helped subvert the Disney Renaissance formula with great humor and heart. Myers, Murphy, Diaz and Lithgow did a great job voicing the characters. Now that this film is 20 years old, I am glad it existed.")
         expect(page).to have_content("Author: GenerationofSwine")
