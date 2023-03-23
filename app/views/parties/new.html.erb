@@ -19,13 +19,15 @@
     <br>
     <br>
     <p> Invite Other Users </p>
-    <% @users.each do |user| %>
-      <div id=<%="#{user.name}"%>>
-        <p>
-          <%= form.label "#{user.name} (#{user.email})" %>
-          <%= form.check_box user.name %>
-        </p>
-      </div>
+     <%= form.fields_for :guest_id do |guest| %>
+      <% @users.each do |user| %>
+        <div id=<%="#{user.name}"%>>
+          <p>
+            <%= guest.label "#{user.name} (#{user.email})" %>
+            <%= guest.check_box user.id %>
+          </p>
+        </div>
+      <% end %>
     <% end %>
     <%= form.submit "Create Party" %>
   <% end %>
