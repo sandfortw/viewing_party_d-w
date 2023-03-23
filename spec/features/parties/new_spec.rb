@@ -44,8 +44,8 @@ RSpec.describe 'Viewing Party New Page' do
 
     it 'has check box for other exisitng users in the system' do
       within("#details_form") {
-        expect(page).to have_unchecked_field(@user_2.name)
-        expect(page).to have_unchecked_field(@user_3.name)
+        expect(page).to have_unchecked_field("_guest_id_#{@user_2.id}")
+        expect(page).to have_unchecked_field("_guest_id_#{@user_3.id}")
       }
     end
 
@@ -53,6 +53,27 @@ RSpec.describe 'Viewing Party New Page' do
       within("#details_form") {
         expect(page).to have_button "Create Party"
       }
+    end
+  end
+
+  describe 'happy path' do
+    it 'submits the form with valid inputs' do
+      fill_in :start_time, with: '3:33 PM'
+      check "_guest_id_#{@user_2.id}"
+      
+      click_button "Create Party"
+
+      expect(current_path).to eq(user_path(@user_1))
+    end
+  end
+
+  describe 'sad path' do
+    it 'does not allow the user to submit a form with empty fields', :vcr do
+      click_button "Create Party"
+
+      expect(current_path).to eq(user_movie_viewing_party_new_path(@user_1.id, 808))
+
+      expect(page).to have_content("Time can't be blank")
     end
   end
 end
