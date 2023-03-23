@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get '/discover', to: 'discover#index'
     resources :movies, only: %i[index]
     resources :movies, only: %i[show] do
-      get '/viewing-party/:id', to: 'parties#new'
+      get '/viewing-party/:id', to: 'parties#new' #refactor?
     end
   end
 end
