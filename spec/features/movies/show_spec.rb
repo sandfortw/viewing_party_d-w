@@ -33,7 +33,7 @@ describe 'movie details page' do
       expect(page).to have_button('Create Viewing Party for Shrek')
     end
 
-    it 'when the button is clicked, it goes somewhere else' do
+    it 'when the button is clicked, it goes somewhere else', :vcr do
       click_button('Create Viewing Party for Shrek')
       expect(current_path).to eq("/users/#{@user.id}/movies/808/viewing-party/new")
     end
