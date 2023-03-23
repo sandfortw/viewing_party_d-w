@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieFacade
   def initialize(movie)
     @movie = movie
@@ -7,7 +9,7 @@ class MovieFacade
     service = MovieService.new
 
     json = service.top_rated_movies
-    
+
     @top_movies = json[:results].map do |movie_data|
       TopMovie.new(movie_data)
     end

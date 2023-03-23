@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class MovieService
   def top_rated_movies
-    get_url("/3/movie/top_rated")
+    get_url('/3/movie/top_rated')
   end
 
   def get_url(url)
@@ -9,8 +11,8 @@ class MovieService
   end
 
   def conn
-    Faraday.new(url: "https://api.themoviedb.org/") do |faraday|
-      faraday.headers["Authorization"] = ENV["TMDB_API_KEY"]
+    Faraday.new(url: 'https://api.themoviedb.org/') do |faraday|
+      faraday.headers['Authorization'] = ENV['TMDB_API_KEY']
     end
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TopMovie
   attr_reader :original_title,
               :vote_average
