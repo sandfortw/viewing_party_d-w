@@ -55,12 +55,12 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'launchy'
   gem 'orderly'
   gem 'pry'
   gem 'rspec-rails', '~> 6.0.0'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'simplecov', require: false, group: :test
-  gem 'launchy'
   gem 'vcr'
   gem 'webmock'
 end
@@ -77,4 +77,3 @@ group :development do
 end
 
 gem 'figaro'
-

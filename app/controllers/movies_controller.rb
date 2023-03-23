@@ -1,7 +1,8 @@
-class MoviesController < ApplicationController
+# frozen_string_literal: true
 
+class MoviesController < ApplicationController
   def index
-    #TOP 20
+    # TOP 20
     conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
       faraday.headers['Authorization'] = ENV['movie_db_token']
     end
@@ -11,7 +12,7 @@ class MoviesController < ApplicationController
       data = JSON.parse(response.body, symbolize_names: true)
       @movies = data[:results]
     elsif params[:search].blank?
-      flash[:notice] = "Field cannot be blank"
+      flash[:notice] = 'Field cannot be blank'
       redirect_to user_discover_path(@user)
     else
       response = conn.get("/3/search/movie?&query=#{params[:search]}&page=1&include_adult=false")
@@ -21,6 +22,18 @@ class MoviesController < ApplicationController
   end
 
   def show
-   
+    conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
+      faraday.headers['Authorization'] = ENV['movie_db_token']
+    end
+    @user = User.find(params[:user_id])
+    response = conn.get("3/movie/#{params[:id]}")
+    data = JSON.parse(response.body, symbolize_names: true)
+    @movie = data
+    response = conn.get("3/movie/#{params[:id]}/credits?&page=1")
+    data = JSON.parse(response.body, symbolize_names: true)
+    @cast = data[:cast]
+    response = conn.get("3/movie/#{params[:id]}/reviews")
+    data = JSON.parse(response.body, symbolize_names: true)
+    @reviews = data[:results]
   end
 end

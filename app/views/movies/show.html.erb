@@ -1,0 +1,35 @@
+<h1> <%= @movie[:original_title] %> </h1>
+<p> <%= button_to("Create Viewing Party for #{@movie[:original_title]}", "/users/#{@user.id}/movies/#{@movie[:id]}/viewing-party/new", method: :get) %>
+
+<section id="headline">
+  <p>Vote <%= @movie[:vote_average]%></p>
+  <p>Runtime <%= runtime_format(@movie[:runtime]) %></p>
+  <p>Genre: <%= @movie[:genres].map{|g| g[:name]}.join(", ") %> </p>
+</section>
+<hr>
+
+<section id="summary">
+<h2> Summary </h2>
+  <p> <%= @movie[:overview] %> </p>
+</section>
+
+<section id="cast">
+<h2> Cast </h2>
+  <%@cast.first(10).each do |member| %>
+    <div id="cast_member">
+      <strong> <%= member[:name] %> </strong>
+      <p> <%= member[:character] %> </p>
+    </div>
+  <% end %>
+</section>
+
+<section id="reviews">
+<h2> Reviews </h2>
+<strong> Review Count: </strong> <%= @reviews.count %> 
+<br>
+<br>
+  <% @reviews.each do |review| %>
+    <strong>Author: <%= review[:author] %> </strong>
+    <p> <%= review[:content] %> </p>
+  <% end %>
+</section>
