@@ -15,7 +15,9 @@ class Party < ApplicationRecord
       faraday.headers['Authorization'] = ENV['movie_db_token']
     end
     response = conn.get("3/movie/#{movie_id}")
-    JSON.parse(response.body, symbolize_names: true)
+    data = JSON.parse(response.body, symbolize_names: true)
+
+    Movie.new(data)
   end
 
   def host_name

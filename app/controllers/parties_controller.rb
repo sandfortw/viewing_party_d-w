@@ -8,7 +8,8 @@ class PartiesController < ApplicationController
 
     response = conn.get("3/movie/#{params[:movie_id]}")
     data = JSON.parse(response.body, symbolize_names: true)
-    @movie = data
+
+    @movie = Movie.new(data)
 
     @user = User.find(params[:user_id])
     @users = User.where.not(id: @user.id)

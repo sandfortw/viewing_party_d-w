@@ -46,8 +46,8 @@ RSpec.describe Party, type: :model do
 
   describe '#movie', :vcr do
     it 'should return a movie' do
-      expect(@party_1.movie[:original_title]).to eq 'Shrek'
-      expect(@party_2.movie[:original_title]).to eq 'The Godfather'
+      expect(@party_1.movie.title).to eq 'Shrek'
+      expect(@party_2.movie.title).to eq 'The Godfather'
     end
   end
 
@@ -57,5 +57,4 @@ RSpec.describe Party, type: :model do
       expect(@party_2.host_name).to eq 'Weston'
     end
   end
-
 end

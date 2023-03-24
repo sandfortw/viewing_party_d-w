@@ -1,13 +1,13 @@
 <h1> Viewing Party </h1>
 
-<h2> <%= "Create a Movie Party for #{@movie[:original_title]}" %> </h2>
+<h2> <%= "Create a Movie Party for #{@movie.title}" %> </h2>
 
 <div id="details_form">
   <h4> Viewing Party Details </h4>
-   <p> Movie Title: <%= @movie[:original_title] %> </<%#  %>>
-  <%= form_with url: user_movie_parties_path(@user, @movie[:id]), local: true do |form| %>
+   <p> Movie Title: <%= @movie.title %> </<%#  %>>
+  <%= form_with url: user_movie_parties_path(@user, @movie.id), local: true do |form| %>
     <%= form.label :duration %>
-    <%= form.number_field :duration, value: @movie[:runtime], in: @movie[:runtime]..1440, step: 1  %>
+    <%= form.number_field :duration, value: @movie.runtime, in: @movie.runtime..1440, step: 1  %>
     <br>
     <br>
     <%= form.label :date %>

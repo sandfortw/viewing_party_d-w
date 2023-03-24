@@ -1,8 +1,8 @@
 
-<%= button_to("Discover Movies", user_discover_path(@user), method: :get) %>
+<%= button_to("Discover Movies", user_discover_path(params[:user_id]), method: :get) %>
 
 <%@movies.each do |movie| %>
   <section id="movie">
-  <p><%= link_to movie[:original_title], user_movie_path(params[:user_id], movie[:id]) %>  Vote Average: <%= movie[:vote_average] %></p>
+  <p><%= link_to movie.title, user_movie_path(params[:user_id], movie.id) %>  Vote Average: <%= movie.vote_avg %></p>
   </section>
 <% end %>
