@@ -4,3 +4,30 @@
 
 
 <h2>My Viewing Parties</h2>
+<%= @user.parties.each do |party| %>
+  <section id="<%="movie_#{party.movie[:id]}"%>">
+   <img src=<%= "https://image.tmdb.org/t/p/w200/#{party.movie[:poster_path]}" %> alt=<%=party.movie[:original_title]%>> 
+    <h3><%= link_to(party.movie[:original_title], user_movie_path(@user.id, party.movie[:id])) %> </h3>
+    <p> Date: <%=party.date%> </p>
+    <p> Time: <%=party.time%> </p>
+
+    <% if party.host_id == @user.id %>
+      <p><%="I am Hosting"%> </p>
+      <% party.users.each do |user| %>
+          <p> <%= user.name unless user == @user%> </p>
+        <% end %>
+      <% end %>
+    <% end %>
+
+    <% if party.host_id != @user.id %>
+      <p><%="Host is #{party.host_name}" %></p>
+      <% party.users.each do |user| %>
+        <% if user == @user %>
+          <strong> <%= user.name %> </strong>
+        <% else %>
+          <p> <%= user.name %> </p>
+        <% end %>
+      <% end %>
+    <% end %>
+  </section>
+<% end %>
