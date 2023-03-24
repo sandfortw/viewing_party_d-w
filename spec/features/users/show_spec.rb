@@ -52,9 +52,9 @@ describe 'user dashboard (show page)', :vcr do
 
     it 'should have the date and time for the party' do
       within('#movie_808') do
-       expect(page).to have_content("Date: 2023-01-01")
-       expect(page).to have_content("Time: 12:00AM")
-
+        save_and_open_page
+       expect(page).to have_content("Date: January 01, 2023")
+       expect(page).to have_content("Time: 12:00 PM")
       end
     end
 
