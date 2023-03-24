@@ -5,6 +5,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
+      faraday.headers['Authorization'] = ENV['movie_db_token']
+    end
+    @movies = @user.parties.map do |party|
+      response = conn.get("3/movie/#{party.movie_id}")
+      JSON.parse(response.body, symbolize_names: true)
+    end
   end
 
   def create

@@ -58,7 +58,7 @@ RSpec.describe 'Viewing Party New Page' do
   end
 
   describe 'happy path' do
-    it 'submits the form with valid inputs' do
+    it 'submits the form with valid inputs', :vcr do
       fill_in :start_time, with: '3:33 PM'
       check "_guest_id_#{@user_2.id}"
 

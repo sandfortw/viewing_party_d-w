@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 23 Mar 2023 22:07:26 GMT
+      - Thu, 23 Mar 2023 23:42:21 GMT
       Server:
       - openresty
       Cache-Control:
@@ -37,24 +37,26 @@ http_interactions:
       X-Memc-Key:
       - fa36800a4a699b32ba20de24746e1936
       X-Memc-Age:
-      - '11367'
+      - '156'
       X-Memc-Expires:
-      - '4111'
+      - '16287'
       Etag:
-      - W/"e4fd94c01c1ab4f2662d404c45a3e548"
+      - W/"bace399d08e77268e8e383d35bc0fcdd"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 f6992241dd15e99fe1ce21d807856f16.cloudfront.net (CloudFront)
+      - 1.1 96725c0e4ced177a38df871e7cc48a4a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - uJ-QW28hryTZURso6b2QAzC26vpUt5MDFaZHYaTrJSgJPzuJ-ZpM3Q==
+      - CYi_Hy_WzoHMouWI_9DmppVGDxUk3QHSHgHPJrfqmmAsfcsuShNx2Q==
+      Age:
+      - '8564'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/sRvXNDItGlWCqtO3j6wks52FmbD.jpg","belongs_to_collection":{"id":2150,"name":"Shrek
@@ -67,6 +69,6 @@ http_interactions:
         Data Images","origin_country":"US"},{"id":521,"logo_path":"/kP7t6RwGz2AvvTkvnI1uteEwHet.png","name":"DreamWorks
         Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2001-05-18","revenue":487853320,"runtime":90,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
-        greatest fairy tale never told.","title":"Shrek","video":false,"vote_average":7.717,"vote_count":15065}'
-  recorded_at: Thu, 23 Mar 2023 22:07:26 GMT
+        greatest fairy tale never told.","title":"Shrek","video":false,"vote_average":7.718,"vote_count":15066}'
+  recorded_at: Fri, 24 Mar 2023 02:05:05 GMT
 recorded_with: VCR 6.1.0
