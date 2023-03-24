@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe 'user dashboard (show page)' do
+describe 'user dashboard (show page)', :vcr do
   before do
     @user = User.create!(name: 'Homer', email: 'Homer@springfield.com')
     visit user_path(@user)
@@ -27,7 +27,7 @@ describe 'user dashboard (show page)' do
     end
   end
 
-  describe 'viewing parties section (invited)' do
+  describe 'viewing parties section (invited)', :vcr do
     before do
       @user_2 = User.create!(name: 'Lenny', email: 'Drunk@springfield.com')
       party = Party.create!(movie_id: 808, host_id: @user_2.id, date: '2023-01-01', time: '12:00', duration: 180)
@@ -36,16 +36,26 @@ describe 'user dashboard (show page)' do
       visit user_path(@user)
     end
 
-    it 'should have the image for the movie' do
-
+    it 'should have the title for the party, which links to its show page', :vcr do
+      within('#movie_808') do
+        expect(page).to have_link("Shrek")
+        click_link "Shrek"
+        expect(current_path).to eq(user_movie_path(@user, 808))
+      end
     end
 
-    it 'should have the title for the party, which links to its show page' do
-
+    it 'should have the image for the movie' do
+      within('#movie_808') do
+        expect(page).to have_css('img[alt="Shrek"]')
+      end
     end
 
     it 'should have the date and time for the party' do
-      
+      within('#movie_808') do
+       expect(page).to have_content("Date: 2023-01-01")
+       expect(page).to have_content("Time: 12:00AM")
+
+      end
     end
 
     it 'should have who is hosting the event' do
@@ -57,7 +67,7 @@ describe 'user dashboard (show page)' do
     end
   end
 
-  describe 'viewing parties section (hosting)' do
+  describe 'viewing parties section (hosting)', :vcr do
     before do
       @user_2 = User.create!(name: 'Lenny', email: 'Drunk@springfield.com')
       party = Party.create!(movie_id: 808, host_id: @user.id, date: '2023-01-01', time: '12:00', duration: 180)
@@ -71,21 +81,21 @@ describe 'user dashboard (show page)' do
     end
   end
 
-  describe 'viewing parties (multiple)' do
+  describe 'viewing parties (multiple)', :vcr do
     before do
       @lenny = User.create!(name: 'Lenny', email: 'Drunk@springfield.com')
       @bart = User.create!(name: 'Bart', email: 'Bart@springfield.com')
       @lisa = User.create!(name: 'Lisa', email: 'Lisa@springfield.com')
       shrek_party = Party.create!(movie_id: 808, host_id: @user.id, date: '2023-01-01', time: '12:00', duration: 180)
-      godfather_party = Party.create!(movie_id: 238, host_id: @user_2.id, date: '2023-05-01', time: '13:00', duration: 180)
-      UserParty.create!(user_id: @user.id, party_id: party.id)
-      UserParty.create!(user_id: @user_2.id, party_id: party.id)
-      UserParty.create!(user_id: @user_3.id, party_id: party.id)
-      UserParty.create!(user_id: @user_4.id, party_id: party.id)
+      godfather_party = Party.create!(movie_id: 238, host_id: @lenny.id, date: '2023-05-01', time: '13:00', duration: 180)
+      UserParty.create!(user_id: @user.id, party_id: shrek_party.id)
+      UserParty.create!(user_id: @lenny.id, party_id: shrek_party.id)
+      UserParty.create!(user_id: @bart.id, party_id: shrek_party.id)
+      UserParty.create!(user_id: @lisa.id, party_id: shrek_party.id)
 
-      UserParty.create!(user_id: @user.id, party_id: party2.id)
-      UserParty.create!(user_id: @user_2.id, party_id: party2.id)
-      UserParty.create!(user_id: @user_3.id, party_id: party2.id)
+      UserParty.create!(user_id: @user.id, party_id: godfather_party.id)
+      UserParty.create!(user_id: @bart.id, party_id: godfather_party.id)
+      UserParty.create!(user_id: @lisa.id, party_id: godfather_party.id)
       visit user_path(@user)
     end
 
@@ -94,7 +104,7 @@ describe 'user dashboard (show page)' do
     end
 
     it 'has all the people invited to the parties' do
-      
+
     end
 
     it 'says whether one is hosting or invited' do

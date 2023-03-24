@@ -1,0 +1,849 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/808
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - movie_db_token>
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 23 Mar 2023 23:42:21 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - fa36800a4a699b32ba20de24746e1936
+      X-Memc-Age:
+      - '156'
+      X-Memc-Expires:
+      - '16287'
+      Etag:
+      - W/"bace399d08e77268e8e383d35bc0fcdd"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 5257b3c7acd3727a389946b312557ff2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - Zj1ewUVEloyfSKYA4wHvTcLXxHpoHp9CrBe1ddHMllE1vaB10K_pCw==
+      Age:
+      - '4963'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/sRvXNDItGlWCqtO3j6wks52FmbD.jpg","belongs_to_collection":{"id":2150,"name":"Shrek
+        Collection","poster_path":"/qNHZMe92A7Pyl46qUH29hVOtbSK.jpg","backdrop_path":"/gMWrKQjoTIpYjhc8SxZF20EDIES.jpg"},"budget":60000000,"genres":[{"id":16,"name":"Animation"},{"id":35,"name":"Comedy"},{"id":14,"name":"Fantasy"},{"id":12,"name":"Adventure"},{"id":10751,"name":"Family"}],"homepage":"http://www.dreamworksanimation.com/shrek/","id":808,"imdb_id":"tt0126029","original_language":"en","original_title":"Shrek","overview":"It
+        ain''t easy bein'' green -- especially if you''re a likable (albeit smelly)
+        ogre named Shrek. On a mission to retrieve a gorgeous princess from the clutches
+        of a fire-breathing dragon, Shrek teams up with an unlikely compatriot --
+        a wisecracking donkey.","popularity":204.314,"poster_path":"/jhTVNBVkdS4Wf6NXYA9kRKQU3YM.jpg","production_companies":[{"id":7,"logo_path":"/vru2SssLX3FPhnKZGtYw00pVIS9.png","name":"DreamWorks
+        Pictures","origin_country":"US"},{"id":520,"logo_path":"/pU7YTI9FfrICurXpl5V9TfCO0oJ.png","name":"Pacific
+        Data Images","origin_country":"US"},{"id":521,"logo_path":"/kP7t6RwGz2AvvTkvnI1uteEwHet.png","name":"DreamWorks
+        Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2001-05-18","revenue":487853320,"runtime":90,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
+        greatest fairy tale never told.","title":"Shrek","video":false,"vote_average":7.718,"vote_count":15066}'
+  recorded_at: Fri, 24 Mar 2023 01:05:04 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - movie_db_token>
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 23 Mar 2023 23:42:22 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '173'
+      X-Memc-Expires:
+      - '15389'
+      Etag:
+      - W/"70df7bcf14241d2caee5fb1ec38337b3"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 d09fd0ac0a8733df98f134da74eec098.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - nn2qLqcbewJ-DNF6ZhnHXI7Yt4ufIjwVWy5NDRrH9SxLhN0xr3jYNw==
+      Age:
+      - '4963'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/9Baumh5J9N1nJUYzNkm0xsgjpwY.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":129.885,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.712,"vote_count":17642}'
+  recorded_at: Fri, 24 Mar 2023 01:05:04 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/808
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - movie_db_token>
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 23 Mar 2023 23:42:21 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - fa36800a4a699b32ba20de24746e1936
+      X-Memc-Age:
+      - '156'
+      X-Memc-Expires:
+      - '16287'
+      Etag:
+      - W/"bace399d08e77268e8e383d35bc0fcdd"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 befcfd7ee847a3c890471f27612dbcde.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 5dmBYLmiGS8gDVP36ck3_DTJpcn-oAWmGe4pt0gYEGhcjOCqAV8KIQ==
+      Age:
+      - '4964'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/sRvXNDItGlWCqtO3j6wks52FmbD.jpg","belongs_to_collection":{"id":2150,"name":"Shrek
+        Collection","poster_path":"/qNHZMe92A7Pyl46qUH29hVOtbSK.jpg","backdrop_path":"/gMWrKQjoTIpYjhc8SxZF20EDIES.jpg"},"budget":60000000,"genres":[{"id":16,"name":"Animation"},{"id":35,"name":"Comedy"},{"id":14,"name":"Fantasy"},{"id":12,"name":"Adventure"},{"id":10751,"name":"Family"}],"homepage":"http://www.dreamworksanimation.com/shrek/","id":808,"imdb_id":"tt0126029","original_language":"en","original_title":"Shrek","overview":"It
+        ain''t easy bein'' green -- especially if you''re a likable (albeit smelly)
+        ogre named Shrek. On a mission to retrieve a gorgeous princess from the clutches
+        of a fire-breathing dragon, Shrek teams up with an unlikely compatriot --
+        a wisecracking donkey.","popularity":204.314,"poster_path":"/jhTVNBVkdS4Wf6NXYA9kRKQU3YM.jpg","production_companies":[{"id":7,"logo_path":"/vru2SssLX3FPhnKZGtYw00pVIS9.png","name":"DreamWorks
+        Pictures","origin_country":"US"},{"id":520,"logo_path":"/pU7YTI9FfrICurXpl5V9TfCO0oJ.png","name":"Pacific
+        Data Images","origin_country":"US"},{"id":521,"logo_path":"/kP7t6RwGz2AvvTkvnI1uteEwHet.png","name":"DreamWorks
+        Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2001-05-18","revenue":487853320,"runtime":90,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
+        greatest fairy tale never told.","title":"Shrek","video":false,"vote_average":7.718,"vote_count":15066}'
+  recorded_at: Fri, 24 Mar 2023 01:05:05 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/808
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - movie_db_token>
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 23 Mar 2023 23:42:21 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - fa36800a4a699b32ba20de24746e1936
+      X-Memc-Age:
+      - '156'
+      X-Memc-Expires:
+      - '16287'
+      Etag:
+      - W/"bace399d08e77268e8e383d35bc0fcdd"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 befcfd7ee847a3c890471f27612dbcde.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - A6XoxFwyV38saEueTFfw6GS4N67QOutyS4-cUNaNq4N5jqoE2IfrCg==
+      Age:
+      - '4964'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/sRvXNDItGlWCqtO3j6wks52FmbD.jpg","belongs_to_collection":{"id":2150,"name":"Shrek
+        Collection","poster_path":"/qNHZMe92A7Pyl46qUH29hVOtbSK.jpg","backdrop_path":"/gMWrKQjoTIpYjhc8SxZF20EDIES.jpg"},"budget":60000000,"genres":[{"id":16,"name":"Animation"},{"id":35,"name":"Comedy"},{"id":14,"name":"Fantasy"},{"id":12,"name":"Adventure"},{"id":10751,"name":"Family"}],"homepage":"http://www.dreamworksanimation.com/shrek/","id":808,"imdb_id":"tt0126029","original_language":"en","original_title":"Shrek","overview":"It
+        ain''t easy bein'' green -- especially if you''re a likable (albeit smelly)
+        ogre named Shrek. On a mission to retrieve a gorgeous princess from the clutches
+        of a fire-breathing dragon, Shrek teams up with an unlikely compatriot --
+        a wisecracking donkey.","popularity":204.314,"poster_path":"/jhTVNBVkdS4Wf6NXYA9kRKQU3YM.jpg","production_companies":[{"id":7,"logo_path":"/vru2SssLX3FPhnKZGtYw00pVIS9.png","name":"DreamWorks
+        Pictures","origin_country":"US"},{"id":520,"logo_path":"/pU7YTI9FfrICurXpl5V9TfCO0oJ.png","name":"Pacific
+        Data Images","origin_country":"US"},{"id":521,"logo_path":"/kP7t6RwGz2AvvTkvnI1uteEwHet.png","name":"DreamWorks
+        Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2001-05-18","revenue":487853320,"runtime":90,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
+        greatest fairy tale never told.","title":"Shrek","video":false,"vote_average":7.718,"vote_count":15066}'
+  recorded_at: Fri, 24 Mar 2023 01:05:05 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/808
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - movie_db_token>
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 23 Mar 2023 23:42:21 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - fa36800a4a699b32ba20de24746e1936
+      X-Memc-Age:
+      - '156'
+      X-Memc-Expires:
+      - '16287'
+      Etag:
+      - W/"bace399d08e77268e8e383d35bc0fcdd"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 1152d84b916a23e4b38cef1a20064b3e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - ZQ9ghqGg9DsLoWwebIMKPJvZBVQRQSSZIFtMWpVKcC6GK4Ted-DSVA==
+      Age:
+      - '4964'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/sRvXNDItGlWCqtO3j6wks52FmbD.jpg","belongs_to_collection":{"id":2150,"name":"Shrek
+        Collection","poster_path":"/qNHZMe92A7Pyl46qUH29hVOtbSK.jpg","backdrop_path":"/gMWrKQjoTIpYjhc8SxZF20EDIES.jpg"},"budget":60000000,"genres":[{"id":16,"name":"Animation"},{"id":35,"name":"Comedy"},{"id":14,"name":"Fantasy"},{"id":12,"name":"Adventure"},{"id":10751,"name":"Family"}],"homepage":"http://www.dreamworksanimation.com/shrek/","id":808,"imdb_id":"tt0126029","original_language":"en","original_title":"Shrek","overview":"It
+        ain''t easy bein'' green -- especially if you''re a likable (albeit smelly)
+        ogre named Shrek. On a mission to retrieve a gorgeous princess from the clutches
+        of a fire-breathing dragon, Shrek teams up with an unlikely compatriot --
+        a wisecracking donkey.","popularity":204.314,"poster_path":"/jhTVNBVkdS4Wf6NXYA9kRKQU3YM.jpg","production_companies":[{"id":7,"logo_path":"/vru2SssLX3FPhnKZGtYw00pVIS9.png","name":"DreamWorks
+        Pictures","origin_country":"US"},{"id":520,"logo_path":"/pU7YTI9FfrICurXpl5V9TfCO0oJ.png","name":"Pacific
+        Data Images","origin_country":"US"},{"id":521,"logo_path":"/kP7t6RwGz2AvvTkvnI1uteEwHet.png","name":"DreamWorks
+        Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2001-05-18","revenue":487853320,"runtime":90,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
+        greatest fairy tale never told.","title":"Shrek","video":false,"vote_average":7.718,"vote_count":15066}'
+  recorded_at: Fri, 24 Mar 2023 01:05:05 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/808
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - movie_db_token>
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 23 Mar 2023 23:42:21 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - fa36800a4a699b32ba20de24746e1936
+      X-Memc-Age:
+      - '156'
+      X-Memc-Expires:
+      - '16287'
+      Etag:
+      - W/"bace399d08e77268e8e383d35bc0fcdd"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 3dc4c80cd959e984309833cac8f5a630.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - s5AT2ARCposMbCgQBLULSHvl1elP1r_gecJ6pNL01srOrpbd6oTTUw==
+      Age:
+      - '4964'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/sRvXNDItGlWCqtO3j6wks52FmbD.jpg","belongs_to_collection":{"id":2150,"name":"Shrek
+        Collection","poster_path":"/qNHZMe92A7Pyl46qUH29hVOtbSK.jpg","backdrop_path":"/gMWrKQjoTIpYjhc8SxZF20EDIES.jpg"},"budget":60000000,"genres":[{"id":16,"name":"Animation"},{"id":35,"name":"Comedy"},{"id":14,"name":"Fantasy"},{"id":12,"name":"Adventure"},{"id":10751,"name":"Family"}],"homepage":"http://www.dreamworksanimation.com/shrek/","id":808,"imdb_id":"tt0126029","original_language":"en","original_title":"Shrek","overview":"It
+        ain''t easy bein'' green -- especially if you''re a likable (albeit smelly)
+        ogre named Shrek. On a mission to retrieve a gorgeous princess from the clutches
+        of a fire-breathing dragon, Shrek teams up with an unlikely compatriot --
+        a wisecracking donkey.","popularity":204.314,"poster_path":"/jhTVNBVkdS4Wf6NXYA9kRKQU3YM.jpg","production_companies":[{"id":7,"logo_path":"/vru2SssLX3FPhnKZGtYw00pVIS9.png","name":"DreamWorks
+        Pictures","origin_country":"US"},{"id":520,"logo_path":"/pU7YTI9FfrICurXpl5V9TfCO0oJ.png","name":"Pacific
+        Data Images","origin_country":"US"},{"id":521,"logo_path":"/kP7t6RwGz2AvvTkvnI1uteEwHet.png","name":"DreamWorks
+        Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2001-05-18","revenue":487853320,"runtime":90,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
+        greatest fairy tale never told.","title":"Shrek","video":false,"vote_average":7.718,"vote_count":15066}'
+  recorded_at: Fri, 24 Mar 2023 01:05:05 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/808
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - movie_db_token>
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 23 Mar 2023 23:42:21 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - fa36800a4a699b32ba20de24746e1936
+      X-Memc-Age:
+      - '156'
+      X-Memc-Expires:
+      - '16287'
+      Etag:
+      - W/"bace399d08e77268e8e383d35bc0fcdd"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 0ecc9d4faf14441bafb84971a4117abc.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 43vQ71gJRNz5dYbnUYnzqn5qb5UknEQQJkr1eGBQXWYKg0LC7ixrzw==
+      Age:
+      - '4964'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/sRvXNDItGlWCqtO3j6wks52FmbD.jpg","belongs_to_collection":{"id":2150,"name":"Shrek
+        Collection","poster_path":"/qNHZMe92A7Pyl46qUH29hVOtbSK.jpg","backdrop_path":"/gMWrKQjoTIpYjhc8SxZF20EDIES.jpg"},"budget":60000000,"genres":[{"id":16,"name":"Animation"},{"id":35,"name":"Comedy"},{"id":14,"name":"Fantasy"},{"id":12,"name":"Adventure"},{"id":10751,"name":"Family"}],"homepage":"http://www.dreamworksanimation.com/shrek/","id":808,"imdb_id":"tt0126029","original_language":"en","original_title":"Shrek","overview":"It
+        ain''t easy bein'' green -- especially if you''re a likable (albeit smelly)
+        ogre named Shrek. On a mission to retrieve a gorgeous princess from the clutches
+        of a fire-breathing dragon, Shrek teams up with an unlikely compatriot --
+        a wisecracking donkey.","popularity":204.314,"poster_path":"/jhTVNBVkdS4Wf6NXYA9kRKQU3YM.jpg","production_companies":[{"id":7,"logo_path":"/vru2SssLX3FPhnKZGtYw00pVIS9.png","name":"DreamWorks
+        Pictures","origin_country":"US"},{"id":520,"logo_path":"/pU7YTI9FfrICurXpl5V9TfCO0oJ.png","name":"Pacific
+        Data Images","origin_country":"US"},{"id":521,"logo_path":"/kP7t6RwGz2AvvTkvnI1uteEwHet.png","name":"DreamWorks
+        Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2001-05-18","revenue":487853320,"runtime":90,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
+        greatest fairy tale never told.","title":"Shrek","video":false,"vote_average":7.718,"vote_count":15066}'
+  recorded_at: Fri, 24 Mar 2023 01:05:05 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - movie_db_token>
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 23 Mar 2023 23:42:22 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '173'
+      X-Memc-Expires:
+      - '15389'
+      Etag:
+      - W/"70df7bcf14241d2caee5fb1ec38337b3"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 8a50fe9452625079391cf0ce7a3e0c56.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 974FC-kP-lU8_fFU4Kj0PDu4fha5k_hD6O_rUI9qgFh46-RVLHwDKA==
+      Age:
+      - '4963'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/9Baumh5J9N1nJUYzNkm0xsgjpwY.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":129.885,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.712,"vote_count":17642}'
+  recorded_at: Fri, 24 Mar 2023 01:05:05 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - movie_db_token>
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 23 Mar 2023 23:42:22 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '173'
+      X-Memc-Expires:
+      - '15389'
+      Etag:
+      - W/"70df7bcf14241d2caee5fb1ec38337b3"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 025e84e972a461c1dd140ac5fbbbd0aa.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - O-gmL1prkxAcboovE19c9XSPIj2Vby30J_wqZGYSfbcbMi7lwVA6kA==
+      Age:
+      - '4963'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/9Baumh5J9N1nJUYzNkm0xsgjpwY.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":129.885,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.712,"vote_count":17642}'
+  recorded_at: Fri, 24 Mar 2023 01:05:05 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - movie_db_token>
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 23 Mar 2023 23:42:22 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '173'
+      X-Memc-Expires:
+      - '15389'
+      Etag:
+      - W/"70df7bcf14241d2caee5fb1ec38337b3"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 d9fe97589e952f97209f7a422c89d876.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - mH6JuR-3VFv49ue9clcUm_Zn2IB2QLW9TDqxj0iAGCTU-rqp2Jy4Yw==
+      Age:
+      - '4963'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/9Baumh5J9N1nJUYzNkm0xsgjpwY.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":129.885,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.712,"vote_count":17642}'
+  recorded_at: Fri, 24 Mar 2023 01:05:05 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - movie_db_token>
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 23 Mar 2023 23:42:22 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '173'
+      X-Memc-Expires:
+      - '15389'
+      Etag:
+      - W/"70df7bcf14241d2caee5fb1ec38337b3"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 1152d84b916a23e4b38cef1a20064b3e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 75u-Sol2V86ZgRK0y_swToY6iAj0_o2u-8FcHt7WmRT1RWMbTWltXw==
+      Age:
+      - '4963'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/9Baumh5J9N1nJUYzNkm0xsgjpwY.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":129.885,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.712,"vote_count":17642}'
+  recorded_at: Fri, 24 Mar 2023 01:05:05 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - movie_db_token>
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 23 Mar 2023 23:42:22 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '173'
+      X-Memc-Expires:
+      - '15389'
+      Etag:
+      - W/"70df7bcf14241d2caee5fb1ec38337b3"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 96971091469e558c8f8e351ccf0d7212.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - fN7euMwFjFiXzW8-VNwM7y5puHqicCmw7zITHdcal-C_AvKLw4opCg==
+      Age:
+      - '4963'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/9Baumh5J9N1nJUYzNkm0xsgjpwY.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":129.885,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.712,"vote_count":17642}'
+  recorded_at: Fri, 24 Mar 2023 01:05:05 GMT
+recorded_with: VCR 6.1.0
