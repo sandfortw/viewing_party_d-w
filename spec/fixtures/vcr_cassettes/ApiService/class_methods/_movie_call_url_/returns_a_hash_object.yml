@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/808
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - movie_db_token>
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 24 Mar 2023 15:54:34 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - fa36800a4a699b32ba20de24746e1936
+      X-Memc-Age:
+      - '10921'
+      X-Memc-Expires:
+      - '6273'
+      Etag:
+      - W/"72f629d2185a6acdcf0d817352296898"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 5d351175d5947d478733fbecdab866f6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 6csM7Bqil-8cTFtMSIAV3k5Qp4EAlka-wT1oUZ3xYabbi9GTV2Olow==
+      Age:
+      - '17775'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/sRvXNDItGlWCqtO3j6wks52FmbD.jpg","belongs_to_collection":{"id":2150,"name":"Shrek
+        Collection","poster_path":"/qNHZMe92A7Pyl46qUH29hVOtbSK.jpg","backdrop_path":"/gMWrKQjoTIpYjhc8SxZF20EDIES.jpg"},"budget":60000000,"genres":[{"id":16,"name":"Animation"},{"id":35,"name":"Comedy"},{"id":14,"name":"Fantasy"},{"id":12,"name":"Adventure"},{"id":10751,"name":"Family"}],"homepage":"http://www.dreamworksanimation.com/shrek/","id":808,"imdb_id":"tt0126029","original_language":"en","original_title":"Shrek","overview":"It
+        ain''t easy bein'' green -- especially if you''re a likable (albeit smelly)
+        ogre named Shrek. On a mission to retrieve a gorgeous princess from the clutches
+        of a fire-breathing dragon, Shrek teams up with an unlikely compatriot --
+        a wisecracking donkey.","popularity":194.348,"poster_path":"/jhTVNBVkdS4Wf6NXYA9kRKQU3YM.jpg","production_companies":[{"id":7,"logo_path":"/vru2SssLX3FPhnKZGtYw00pVIS9.png","name":"DreamWorks
+        Pictures","origin_country":"US"},{"id":520,"logo_path":"/pU7YTI9FfrICurXpl5V9TfCO0oJ.png","name":"Pacific
+        Data Images","origin_country":"US"},{"id":521,"logo_path":"/kP7t6RwGz2AvvTkvnI1uteEwHet.png","name":"DreamWorks
+        Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2001-05-18","revenue":487853320,"runtime":90,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
+        greatest fairy tale never told.","title":"Shrek","video":false,"vote_average":7.718,"vote_count":15067}'
+  recorded_at: Fri, 24 Mar 2023 20:50:49 GMT
+recorded_with: VCR 6.1.0
