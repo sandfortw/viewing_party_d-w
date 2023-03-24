@@ -22,7 +22,6 @@ class MoviesController < ApplicationController
         Movie.new(movie)
       end
     end
-
   end
 
   def show

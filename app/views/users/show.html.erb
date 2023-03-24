@@ -6,9 +6,9 @@
 <h2>My Viewing Parties</h2>
 <% @user.parties.each do |party| %>
   <div id="party">
-  <section id="<%="movie_#{party.movie[:id]}"%>">
-   <img src=<%= "https://image.tmdb.org/t/p/w200/#{party.movie[:poster_path]}" %> alt=<%=party.movie[:original_title]%>> 
-    <h3><%= link_to(party.movie[:original_title], user_movie_path(@user.id, party.movie[:id])) %> </h3>
+  <section id="<%="movie_#{party.movie.id}"%>">
+   <img src=<%= "https://image.tmdb.org/t/p/w200/#{party.movie.image}" %> alt=<%=party.movie.title%>> 
+    <h3><%= link_to(party.movie.title, user_movie_path(@user.id, party.movie.id)) %> </h3>
     <p> Date: <%=party.date.strftime("%B %d, %Y")%> </p>
     <p> Time: <%=party.time.strftime("%l:%M %p")%> </p>
 
