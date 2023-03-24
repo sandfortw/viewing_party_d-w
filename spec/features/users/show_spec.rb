@@ -52,16 +52,26 @@ describe 'user dashboard (show page)', :vcr do
 
     it 'should have the date and time for the party' do
       within('#movie_808') do
-        save_and_open_page
         expect(page).to have_content('Date: January 01, 2023')
         expect(page).to have_content('Time: 12:00 PM')
       end
     end
 
     it 'should have who is hosting the event' do
+      within('#movie_808') do
+        expect(page).to have_content('Host is Lenny')
+      end
     end
 
     it 'should have of users invited to the party, with user name in bold' do
+      within('#invited') do
+        expect(page).to have_css('strong', text: 'Homer')
+        expect(page).to have_content('Lenny')
+      end
+    end
+
+    it 'does not say that I am host of the party' do
+      expect(page).to_not have_content('I am Hosting')
     end
   end
 
@@ -75,6 +85,7 @@ describe 'user dashboard (show page)', :vcr do
     end
 
     it 'says that I am host of the party' do
+      expect(page).to have_content('I am Hosting')
     end
   end
 
@@ -98,12 +109,33 @@ describe 'user dashboard (show page)', :vcr do
     end
 
     it 'displays multiple parties' do
+      expect(page).to have_css('div#party', count: 2)
+      expect(page).to have_content('Shrek')
+      expect(page).to have_content('The Godfather')
     end
 
     it 'has all the people invited to the parties' do
+      within('#movie_808 #invited') do
+        expect(page).to have_content('Lenny')
+        expect(page).to have_content('Bart')
+        expect(page).to have_content('Lisa')
+      end
+      within('#movie_238 #invited') do
+        expect(page).to have_content('Homer')
+        expect(page).to have_content('Bart')
+        expect(page).to have_content('Lisa')
+      end
     end
 
     it 'says whether one is hosting or invited' do
+      within('#movie_808') do
+        expect(page).to have_content('I am Hosting')
+        expect(page).to_not have_content('Host is')
+      end
+      within('#movie_238') do
+        expect(page).to_not have_content('I am Hosting')
+        expect(page).to have_content('Host is Lenny')
+      end
     end
   end
 end
