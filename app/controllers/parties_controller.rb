@@ -2,15 +2,7 @@
 
 class PartiesController < ApplicationController
   def new
-    conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
-      faraday.headers['Authorization'] = ENV['movie_db_token']
-    end
-
-    response = conn.get("3/movie/#{params[:movie_id]}")
-    data = JSON.parse(response.body, symbolize_names: true)
-
-    @movie = Movie.new(data)
-
+    @movie = MovieService.new.get_movie("3/movie/#{params[:movie_id]}")
     @user = User.find(params[:user_id])
     @users = User.where.not(id: @user.id)
   end

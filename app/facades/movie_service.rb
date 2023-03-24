@@ -10,6 +10,13 @@ class MovieService
     end
   end
 
+  def get_movie(url)
+    conn = make_conn
+    response = conn.get(url)
+    data = JSON.parse(response.body, symbolize_names: true)
+    Movie.new(data)
+  end
+
   def get_full_movie(movie_url, cast_url, review_url)
     conn = make_conn
     response = conn.get(movie_url)
