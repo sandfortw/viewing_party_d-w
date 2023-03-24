@@ -20,8 +20,10 @@ class PartiesController < ApplicationController
                       time: params[:start_time], duration: params[:duration], host_id: params[:user_id])
 
     if party.save
-      params[:guest_id].each do |guest|
-        UserParty.create!(user_id: guest[0], party_id: party.id) if (guest[1] = '1')
+      if params[:guest_id]
+        params[:guest_id].each do |guest|
+          UserParty.create!(user_id: guest[0], party_id: party.id) if (guest[1] = '1')
+        end
       end
       UserParty.create!(user_id: params[:user_id], party_id: party.id)
 
