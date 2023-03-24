@@ -19,8 +19,8 @@ user_8 = User.create!(name: 'Krusty', email: 'Krusty@springfield.com')
 user_9 = User.create!(name: 'Mr.Burns', email: 'CEO@springfield.com')
 user_10 = User.create!(name: 'Lenny', email: 'Drunk@springfield.com')
 
-party_1 = Party.create!(movie_id: 1, host_id: user_1.id, date: '2023-01-01', time: '12:00', duration: 300)
-party_2 = Party.create!(movie_id: 2, host_id: user_2.id, date: '2023-02-01', time: '06:00', duration: 300)
+party_1 = Party.create!(movie_id: 808, host_id: user_1.id, date: '2023-01-01', time: '12:00', duration: 300)
+party_2 = Party.create!(movie_id: 238, host_id: user_2.id, date: '2023-02-01', time: '06:00', duration: 300)
 
 user_party_1 = UserParty.create!(user_id: user_1.id, party_id: party_1.id)
 user_party_2 = UserParty.create!(user_id: user_3.id, party_id: party_1.id)

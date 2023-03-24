@@ -2,14 +2,174 @@
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
  * vendor/assets/stylesheets directory can be referenced here using a relative path.
  *
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
  *= require_self
  */
+ .main_container {
+  border-style: solid;
+}
+
+h1 {
+  text-align: center;
+}
+
+h1 span {
+  background-color: rgb(175, 182, 195);
+  padding: 22px;
+  margin: 10px;
+}
+
+.sub_header {
+  width: 475px;
+  border-top: solid;
+  text-align: center;
+  background-color: rgb(175, 182, 195);
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.page_title {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.nav_bar {
+  display: flex;
+  padding-left: 30px;
+  padding-right: 30px;
+  justify-content: space-between;
+}
+
+.nav_elements {
+  display: flex;
+}
+
+.body_container{
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.sub_container {
+  padding: 10px;
+  border-radius: 15px;
+  border-style: groove;
+  display: inline-block;
+  margin: 10px;
+  justify-content: space-around;
+}
+
+.highlighted_link {
+  text-align: center;
+  padding: 10px;
+  border-radius: 25px;
+  background-color: rgb(175, 182, 195);
+}
+
+.link {
+  padding: 10px;
+  text-align: center;
+}
+
+.customer_font {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.sub_font {
+  padding: 2px;
+}
+
+.new_merchant {
+  padding: 10px;
+  padding-left: 50px;
+}
+
+.merchants_container {
+
+}
+
+.merchant_container {
+  padding-left: 60px;
+  padding-bottom: 8px;
+  display: flex;
+}
+
+
+.wide_container {
+  min-width: 100%;
+  display: inline-block;
+}
+
+.wide_header {
+  margin: 10px;
+  border-top: solid;
+  text-align: center;
+  background-color: rgb(175, 182, 195);
+  font-weight: bold;
+  font-size: 25px;  
+}
+
+table {
+  border: 1px solid;
+}
+
+tbody th {
+  width: 200px;
+  background-color: rgb(155, 161, 173);
+  text-align: center;
+  border: 1px solid;
+}
+
+tbody td {
+  text-align: center;
+  border: 1px solid;
+  padding: 5px; 
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgb(219, 226, 240);
+}
+
+.table_container {
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+.sub_header_merchant_item {
+  width: 1150px;
+  border-top: solid;
+  text-align: center;
+  background-color: rgb(175, 182, 195);
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.sub_container_merchant_item {
+  margin: 50px;
+}
+
+.body_container_merchant_item{
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+footer {
+  border-top: solid;
+  background-color: rgb(175, 182, 195);
+}
+
+.center {
+  text-align: center;
+}
