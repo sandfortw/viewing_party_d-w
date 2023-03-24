@@ -1,17 +1,17 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-
 describe 'movie poro', :vcr do
-  
   before do
     conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
       faraday.headers['Authorization'] = ENV['movie_db_token']
     end
-    response = conn.get("3/movie/808")
+    response = conn.get('3/movie/808')
     movie_data = JSON.parse(response.body, symbolize_names: true)
-    response = conn.get("3/movie/808/credits?page=1")
+    response = conn.get('3/movie/808/credits?page=1')
     cast_data = JSON.parse(response.body, symbolize_names: true)
-    response = conn.get("3/movie/808/reviews")
+    response = conn.get('3/movie/808/reviews')
     review_data = JSON.parse(response.body, symbolize_names: true)
     @movie = Movie.new(movie_data, cast_data, review_data)
     @movie_2 = Movie.new(movie_data)
@@ -59,5 +59,4 @@ describe 'movie poro', :vcr do
 
     expect(@movie_2.image).to be_a(String)
   end
-
 end
