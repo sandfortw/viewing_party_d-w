@@ -10,8 +10,10 @@ require 'rails_helper'
 
 describe 'login page' do
 
-  it 'should do all the things I need' do
+  before do 
     User.create!(name: 'Santa', email: 'santa@northpole.com', password: 'rudolph123')
+  end
+  it 'happy path' do
     visit root_path
 
     click_on 'Log In'
@@ -21,5 +23,14 @@ describe 'login page' do
     fill_in('password', with: 'rudolph123')
     click_on 'Log In'
     expect(current_path).to eq(user_path(User.last))
+  end
+
+  it 'sad path' do
+    visit login_path
+    fill_in('email', with: 'santa@northpole.com')
+    fill_in('password', with: 'santababy')
+    click_on 'Log In'
+    expect(current_path).to eq(login_path)
+    expect(page).to have_content("Sorry, your credentials are bad.")
   end
 end
