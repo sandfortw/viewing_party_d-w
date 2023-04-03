@@ -5,7 +5,7 @@ require 'rails_helper'
 describe 'movie details page' do
   before do
     VCR.use_cassette('Shrek') do
-      @user = User.create!(name: 'Donkey', email: 'donkey@swampify.com')
+      @user = User.create!(name: 'Donkey', email: 'donkey@swampify.com', password: 'password123', password_confirmation: 'password123')
       visit user_movie_path(@user, 808)
     end
   end
@@ -16,7 +16,7 @@ describe 'movie details page' do
     end
 
     it 'should have the vote for a movie' do
-      expect(page).to have_content('Vote 7.717')
+      expect(page).to have_content('Vote 7.718')
     end
 
     it 'should have the formatted runtime for the movie' do

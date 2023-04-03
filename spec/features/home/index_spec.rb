@@ -4,10 +4,10 @@ require 'rails_helper'
 
 describe 'home page' do
   before do
-    @user_1 = User.create!(name: 'Dawson', email: 'DawsonTimmons@gmail.com')
-    @user_2 = User.create!(name: 'Weston', email: 'Sandfortw@gmail.com')
-    @user_3 = User.create!(name: 'Homer', email: 'Homer@springfield.com')
-    @user_4 = User.create!(name: 'Marge', email: 'Marge@springfield.com')
+    @user_1 = User.create!(name: 'Dawson', email: 'DawsonTimmons@gmail.com', password: 'password123', password_confirmation: 'password123')
+    @user_2 = User.create!(name: 'Weston', email: 'Sandfortw@gmail.com', password: 'password123', password_confirmation: 'password123')
+    @user_3 = User.create!(name: 'Homer', email: 'Homer@springfield.com', password: 'password123', password_confirmation: 'password123')
+    @user_4 = User.create!(name: 'Marge', email: 'Marge@springfield.com', password: 'password123', password_confirmation: 'password123')
     visit root_path
   end
 

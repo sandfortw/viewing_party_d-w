@@ -4,7 +4,7 @@ require 'rails_helper'
 
 describe 'user dashboard (show page)', :vcr do
   before do
-    @user = User.create!(name: 'Homer', email: 'Homer@springfield.com')
+    @user = User.create!(name: 'Homer', email: 'Homer@springfield.com', password: 'password123', password_confirmation: 'password123')
     visit user_path(@user)
   end
 
@@ -29,7 +29,7 @@ describe 'user dashboard (show page)', :vcr do
 
   describe 'viewing parties section (invited)', :vcr do
     before do
-      @user_2 = User.create!(name: 'Lenny', email: 'Drunk@springfield.com')
+      @user_2 = User.create!(name: 'Lenny', email: 'Drunk@springfield.com', password: 'password123', password_confirmation: 'password123')
       party = Party.create!(movie_id: 808, host_id: @user_2.id, date: '2023-01-01', time: '12:00', duration: 180)
       UserParty.create!(user_id: @user.id, party_id: party.id)
       UserParty.create!(user_id: @user_2.id, party_id: party.id)
@@ -77,7 +77,7 @@ describe 'user dashboard (show page)', :vcr do
 
   describe 'viewing parties section (hosting)', :vcr do
     before do
-      @user_2 = User.create!(name: 'Lenny', email: 'Drunk@springfield.com')
+      @user_2 = User.create!(name: 'Lenny', email: 'Drunk@springfield.com', password: 'password123', password_confirmation: 'password123')
       party = Party.create!(movie_id: 808, host_id: @user.id, date: '2023-01-01', time: '12:00', duration: 180)
       UserParty.create!(user_id: @user.id, party_id: party.id)
       UserParty.create!(user_id: @user_2.id, party_id: party.id)
@@ -91,9 +91,9 @@ describe 'user dashboard (show page)', :vcr do
 
   describe 'viewing parties (multiple)', :vcr do
     before do
-      @lenny = User.create!(name: 'Lenny', email: 'Drunk@springfield.com')
-      @bart = User.create!(name: 'Bart', email: 'Bart@springfield.com')
-      @lisa = User.create!(name: 'Lisa', email: 'Lisa@springfield.com')
+      @lenny = User.create!(name: 'Lenny', email: 'Drunk@springfield.com', password: 'password123', password_confirmation: 'password123')
+      @bart = User.create!(name: 'Bart', email: 'Bart@springfield.com', password: 'password123', password_confirmation: 'password123')
+      @lisa = User.create!(name: 'Lisa', email: 'Lisa@springfield.com', password: 'password123', password_confirmation: 'password123')
       shrek_party = Party.create!(movie_id: 808, host_id: @user.id, date: '2023-01-01', time: '12:00', duration: 180)
       godfather_party = Party.create!(movie_id: 238, host_id: @lenny.id, date: '2023-05-01', time: '13:00',
                                       duration: 180)
