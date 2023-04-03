@@ -5,7 +5,7 @@ require 'rails_helper'
 describe 'movie details page' do
   before do
     VCR.use_cassette('Shrek') do
-      @user = User.create!(name: 'Donkey', email: 'donkey@swampify.com')
+      @user = User.create!(name: 'Donkey', email: 'donkey@swampify.com', password: 'password')
       visit user_movie_path(@user, 808)
     end
   end

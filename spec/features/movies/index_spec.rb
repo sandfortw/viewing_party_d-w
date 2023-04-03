@@ -6,7 +6,7 @@ describe 'movies page' do
   context 'top 20 button clicked' do
     before do
       VCR.use_cassette('top_20') do
-        @user = User.create!(name: 'Homer', email: 'Homer@springfield.com')
+        @user = User.create!(name: 'Homer', email: 'Homer@springfield.com', password: 'password')
         visit user_discover_path(@user)
         click_button 'Find Top Rated Movies'
       end
@@ -43,7 +43,7 @@ describe 'movies page' do
   context 'search for a movie(Forrest Gump)' do
     before do
       VCR.use_cassette('Forrest Gump') do
-        @user = User.create!(name: 'Homer', email: 'Homer@springfield.com')
+        @user = User.create!(name: 'Homer', email: 'Homer@springfield.com', password: 'password')
         visit user_discover_path(@user)
         fill_in :search, with: 'Forrest Gump'
         click_button 'Find Movies'
@@ -74,7 +74,7 @@ describe 'movies page' do
   context 'search for a movie(F)' do
     before do
       VCR.use_cassette('F Search') do
-        @user = User.create!(name: 'Homer', email: 'Homer@springfield.com')
+        @user = User.create!(name: 'Homer', email: 'Homer@springfield.com', password: 'password')
         visit user_discover_path(@user)
         fill_in :search, with: 'F'
         click_button 'Find Movies'

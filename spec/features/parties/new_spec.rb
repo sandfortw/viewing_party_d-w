@@ -4,9 +4,9 @@ require 'rails_helper'
 
 RSpec.describe 'Viewing Party New Page' do
   before do
-    @user_1 = User.create!(name: 'Homer', email: 'Homer@springfield.com')
-    @user_2 = User.create!(name: 'Krusty', email: 'Krusty@springfield.com')
-    @user_3 = User.create!(name: 'Mr.Burns', email: 'CEO@springfield.com')
+    @user_1 = User.create!(name: 'Homer', email: 'Homer@springfield.com', password: 'password')
+    @user_2 = User.create!(name: 'Krusty', email: 'Krusty@springfield.com', password: 'password')
+    @user_3 = User.create!(name: 'Mr.Burns', email: 'CEO@springfield.com', password: 'password')
     VCR.use_cassette('Shrek') do
       visit user_movie_viewing_party_new_path(@user_1.id, 808)
     end
