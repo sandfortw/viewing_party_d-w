@@ -26,7 +26,10 @@ describe 'login page' do
   end
 
   it 'sad path' do
-    visit login_path
+    visit root_path
+
+    click_on 'My dashboard'
+    expect(current_path).to eq('/login') 
     fill_in('email', with: 'santa@northpole.com')
     fill_in('password', with: 'santababy')
     click_on 'Log In'
