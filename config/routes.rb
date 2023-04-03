@@ -12,5 +12,8 @@ Rails.application.routes.draw do
       resources :parties, only: %i[create]
     end
   end
+
+  get '/login', to: 'users#login_form'
+  post '/login', to: 'users#login_user'
 end
 

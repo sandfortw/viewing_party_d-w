@@ -4,7 +4,7 @@ require 'rails_helper'
 
 describe 'discover movies page' do
   before do
-    @user = User.create!(name: 'Homer', email: 'Homer@springfield.com')
+    @user = User.create!(name: 'Homer', email: 'Homer@springfield.com', password: '1234')
     visit user_discover_path(@user)
   end
 

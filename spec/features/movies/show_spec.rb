@@ -16,7 +16,7 @@ describe 'movie details page' do
     end
 
     it 'should have the vote for a movie' do
-      expect(page).to have_content('Vote 7.717')
+      expect(page).to have_content('Vote 7.718')
     end
 
     it 'should have the formatted runtime for the movie' do
