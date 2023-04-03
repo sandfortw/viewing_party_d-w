@@ -11,6 +11,7 @@ require 'rails_helper'
 describe 'login page' do
 
   it 'should do all the things I need' do
+    User.create!(name: 'Santa', email: 'santa@northpole.com', password: 'rudolph123')
     visit root_path
 
     click_on 'Log In'
@@ -18,6 +19,7 @@ describe 'login page' do
 
     fill_in('email', with: 'santa@northpole.com')
     fill_in('password', with: 'rudolph123')
-    expect(current_path).to eq(user_show_path(User.last))
+    click_on 'Log In'
+    expect(current_path).to eq(user_path(User.last))
   end
 end
