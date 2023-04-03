@@ -1,13 +1,9 @@
-<h3> Register a New User </h3>
-
-<%= form_with url: users_path, method: :post, local: true do |form| %>
-  <%= form.label :name, "Name:" %>
-  <%= form.text_field :name %>
+<%= form_with url: login_path, method: :post, local: true do |form| %>
   <%= form.label :email, "Email:" %>
   <%= form.text_field :email %>
   <%= form.label :password, "Password:" %>
   <%= form.text_field :password %>
   <%= form.label :password_confirmation, "Password Confirmation:" %>
   <%= form.text_field :password_confirmation %>
-  <%= form.submit "Register" %>
+  <%= form.submit "Log In" %>
 <% end%>
