@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save && params[:password] == params[:password_confirmation]
+      session[:user_id] = user.id
       flash[:notice] = "User: #{user.name}, has been created!"
       redirect_to user_path(user)
     else
@@ -35,6 +36,22 @@ def login_user
   end
 end
 
+def logout_user
+  user = User.find(session[:user_id])
+  flash[:success] = "#{user.name} logged out"
+  session[:user_id] = nil
+  redirect_to root_path
+end
+
+def dashboard
+  if session[:user_id]
+    user = User.find(session[:user_id])
+    redirect_to user_path(user)
+  else
+    flash[:message] = "You must be logged in or registed to access your dashboard."
+    redirect_to root_path
+  end
+end
   private
 
   def user_params

@@ -1,0 +1,8 @@
+
+<%= button_to("Discover Movies", discover_path, method: :get) %>
+
+<%@movies.each do |movie| %>
+  <section id="movie">
+  <p><%= link_to movie.title, visitor_movie_path(movie.id) %>  Vote Average: <%= movie.vote_avg %></p>
+  </section>
+<% end %>

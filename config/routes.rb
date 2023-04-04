@@ -15,5 +15,12 @@ Rails.application.routes.draw do
 
   get '/login', to: 'users#login_form'
   post '/login', to: 'users#login_user'
+  get '/logout', to: 'users#logout_user'
+
+  get '/dashboard', to: 'users#dashboard'
+
+  get '/discover', to: 'visitor_discover#index'
+  # get '/visitor_parties', to: 'visitor_parties#index'
+  resources :visitor_movies, only: %i[index show]
 end
 
