@@ -23,7 +23,7 @@ describe 'user dashboard (show page)', :vcr do
 
     it 'links to a user\'s discover page' do
       click_button 'Discover Movies'
-      expect(current_path).to eq(user_discover_path(@user))
+      expect(current_path).to eq(discover_path)
     end
   end
 
@@ -40,7 +40,7 @@ describe 'user dashboard (show page)', :vcr do
       within('#movie_808') do
         expect(page).to have_link('Shrek')
         click_link 'Shrek'
-        expect(current_path).to eq(user_movie_path(@user, 808))
+        expect(current_path).to eq(movie_path(808))
       end
     end
 

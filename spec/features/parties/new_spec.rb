@@ -7,11 +7,18 @@ RSpec.describe 'Viewing Party New Page' do
     @user_1 = User.create!(name: 'Homer', email: 'Homer@springfield.com', password: 'password')
     @user_2 = User.create!(name: 'Krusty', email: 'Krusty@springfield.com', password: 'password')
     @user_3 = User.create!(name: 'Mr.Burns', email: 'CEO@springfield.com', password: 'password')
+    visit root_path
+    click_on 'Log In'
+    fill_in 'email', with: @user_1.email
+    fill_in 'password', with: @user_1.password
+    click_on 'Log In'
+    visit root_path
     VCR.use_cassette('Shrek') do
-      visit user_movie_viewing_party_new_path(@user_1.id, 808)
+      visit movie_viewing_party_new_path(808)
     end
   end
   context 'viewing party details form' do
+    
     it 'has a title' do
       expect(page).to have_content('Viewing Party Details')
       expect(page).to have_content('Create a Movie Party for Shrek')
@@ -61,7 +68,6 @@ RSpec.describe 'Viewing Party New Page' do
     it 'submits the form with valid inputs', :vcr do
       fill_in :start_time, with: '3:33 PM'
       check "_guest_id_#{@user_2.id}"
-
       click_button 'Create Party'
 
       expect(current_path).to eq(user_path(@user_1))
@@ -72,7 +78,7 @@ RSpec.describe 'Viewing Party New Page' do
     it 'does not allow the user to submit a form with empty fields', :vcr do
       click_button 'Create Party'
 
-      expect(current_path).to eq(user_movie_viewing_party_new_path(@user_1.id, 808))
+      expect(current_path).to eq(movie_viewing_party_new_path(808))
 
       expect(page).to have_content("Time can't be blank")
     end

@@ -6,7 +6,13 @@ describe 'movie details page' do
   before do
     VCR.use_cassette('Shrek') do
       @user = User.create!(name: 'Donkey', email: 'donkey@swampify.com', password: 'password')
-      visit user_movie_path(@user, 808)
+      visit root_path
+    click_on 'Log In'
+    fill_in 'email', with: @user.email
+    fill_in 'password', with: @user.password
+    click_on 'Log In'
+    visit root_path
+      visit movie_path( 808)
     end
   end
 
@@ -35,7 +41,7 @@ describe 'movie details page' do
 
     it 'when the button is clicked, it goes somewhere else', :vcr do
       click_button('Create Viewing Party for Shrek')
-      expect(current_path).to eq("/users/#{@user.id}/movies/808/viewing-party/new")
+      expect(current_path).to eq("/movies/808/viewing-party/new")
     end
   end
 
