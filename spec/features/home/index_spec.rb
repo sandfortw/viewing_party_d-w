@@ -21,13 +21,18 @@ describe 'home page' do
     expect(current_path).to eq(register_path)
   end
 
-  it 'lists the existing users which links to the user\'s dashboard' do
-    expect(page).to have_link('Dawson')
-    expect(page).to have_link('Weston')
-    expect(page).to have_link('Homer')
-    expect(page).to have_link('Marge')
-    click_link('Dawson')
-    expect(current_path).to eq(user_path(@user_1.id))
+  it 'has a list of the users emails if logged in' do
+    visit root_path
+    click_on 'Log In'
+    fill_in 'email', with: @user_1.email
+    fill_in 'password', with: @user_1.password
+    click_on 'Log In'
+    visit root_path
+
+    expect(page).to have_content(@user_1.email)
+    expect(page).to have_content(@user_2.email)
+    expect(page).to have_content(@user_3.email)
+    expect(page).to have_content(@user_4.email)
   end
 
   it 'has a link back to the landing page (the current page)' do # TODO: make a layout test
