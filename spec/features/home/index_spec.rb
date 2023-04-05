@@ -68,7 +68,7 @@ describe 'home page' do
     click_on 'My dashboard'
 
     expect(current_path).to eq(root_path)
-    expect(page).to have_content("You must be logged in or registed to access your dashboard.")
+    expect(page).to have_content("You must be logged in or registered to access your dashboard.")
   end
 
   it 'has a link back to the landing page (the current page)' do # TODO: make a layout test

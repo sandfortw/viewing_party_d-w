@@ -22,7 +22,7 @@ describe 'login page' do
     fill_in('email', with: 'santa@northpole.com')
     fill_in('password', with: 'rudolph123')
     click_on 'Log In'
-    expect(current_path).to eq(user_path(User.last))
+    expect(current_path).to eq(dashboard_path)
   end
 
   it 'sad path' do

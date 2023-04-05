@@ -4,7 +4,12 @@ class UsersController < ApplicationController
   def new; end
 
   def show
-    @user = User.find(params[:id])
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    else
+      flash[:message] = "You must be logged in or registered to access your dashboard."
+      redirect_to root_path
+    end
   end
 
   def create
@@ -12,7 +17,7 @@ class UsersController < ApplicationController
     if user.save && params[:password] == params[:password_confirmation]
       session[:user_id] = user.id
       flash[:notice] = "User: #{user.name}, has been created!"
-      redirect_to user_path(user)
+      redirect_to dashboard_path
     else
       flash[:alert] = 'Passwords do not match' if params[:password] != params[:password_confirmation]
       flash[:error] = user.errors.full_messages.join(', ')
@@ -29,7 +34,7 @@ def login_user
   if user.authenticate(params[:password])
     session[:user_id] = user.id
     flash[:success] = "Welcome, #{user.name}!"
-    redirect_to user_path(user)
+    redirect_to dashboard_path
   else
     flash[:error] = "Sorry, your credentials are bad."
     redirect_to login_path
@@ -39,19 +44,21 @@ end
 def logout_user
   user = User.find(session[:user_id])
   flash[:success] = "#{user.name} logged out"
-  session[:user_id] = nil
+  # session[:user_id] = nil
+  # reset_session
+  session.delete(:user_id)
   redirect_to root_path
 end
 
-def dashboard
-  if session[:user_id]
-    user = User.find(session[:user_id])
-    redirect_to user_path(user)
-  else
-    flash[:message] = "You must be logged in or registed to access your dashboard."
-    redirect_to root_path
-  end
-end
+# def dashboard
+#   if session[:user_id]
+#     user = User.find(session[:user_id])
+#     redirect_to user_path(user)
+#   else
+#     flash[:message] = "You must be logged in or registed to access your dashboard."
+#     redirect_to root_path
+#   end
+# end
   private
 
   def user_params

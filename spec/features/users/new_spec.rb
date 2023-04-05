@@ -37,7 +37,7 @@ describe 'the user new page' do
 
       click_button 'Register'
 
-      expect(current_path).to eq(user_path(User.last))
+      expect(current_path).to eq(dashboard_path)
       expect(User.last.authenticate('1234')).to eq(User.last)
       expect(User.last.authenticate('134')).to_not eq(User.last)
     end

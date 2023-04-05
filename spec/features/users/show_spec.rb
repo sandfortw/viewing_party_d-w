@@ -5,7 +5,12 @@ require 'rails_helper'
 describe 'user dashboard (show page)', :vcr do
   before do
     @user = User.create!(name: 'Homer', email: 'Homer@springfield.com', password: 'password')
-    visit user_path(@user)
+    visit root_path
+    click_on 'Log In'
+    fill_in('email', with: @user.email)
+    fill_in('password', with: @user.password)
+    click_on 'Log In'
+    visit dashboard_path
   end
 
   it 'has a header' do
@@ -33,7 +38,7 @@ describe 'user dashboard (show page)', :vcr do
       party = Party.create!(movie_id: 808, host_id: @user_2.id, date: '2023-01-01', time: '12:00', duration: 180)
       UserParty.create!(user_id: @user.id, party_id: party.id)
       UserParty.create!(user_id: @user_2.id, party_id: party.id)
-      visit user_path(@user)
+      visit dashboard_path
     end
 
     it 'should have the title for the party, which links to its show page', :vcr do
@@ -81,7 +86,7 @@ describe 'user dashboard (show page)', :vcr do
       party = Party.create!(movie_id: 808, host_id: @user.id, date: '2023-01-01', time: '12:00', duration: 180)
       UserParty.create!(user_id: @user.id, party_id: party.id)
       UserParty.create!(user_id: @user_2.id, party_id: party.id)
-      visit user_path(@user)
+      visit dashboard_path
     end
 
     it 'says that I am host of the party' do
@@ -105,7 +110,7 @@ describe 'user dashboard (show page)', :vcr do
       UserParty.create!(user_id: @user.id, party_id: godfather_party.id)
       UserParty.create!(user_id: @bart.id, party_id: godfather_party.id)
       UserParty.create!(user_id: @lisa.id, party_id: godfather_party.id)
-      visit user_path(@user)
+      visit dashboard_path
     end
 
     it 'displays multiple parties' do

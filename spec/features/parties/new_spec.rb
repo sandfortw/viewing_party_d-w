@@ -70,7 +70,7 @@ RSpec.describe 'Viewing Party New Page' do
       check "_guest_id_#{@user_2.id}"
       click_button 'Create Party'
 
-      expect(current_path).to eq(user_path(@user_1))
+      expect(current_path).to eq(dashboard_path)
     end
   end
 

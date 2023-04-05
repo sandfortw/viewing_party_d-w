@@ -2,9 +2,14 @@
 
 class PartiesController < ApplicationController
   def new
-    @movie = MovieService.get_movie(params[:movie_id])
-    @user = User.find(session[:user_id])
-    @users = User.where.not(id: @user.id)
+    if session[:user_id]
+      @movie = MovieService.get_movie(params[:movie_id])
+      @user = User.find(session[:user_id])
+      @users = User.where.not(id: @user.id)
+    else
+      flash[:notice] = "You must be logged in or registered to create a viewing party"
+      redirect_to movie_path(params[:movie_id])
+    end
   end
 
   def create
@@ -19,7 +24,7 @@ class PartiesController < ApplicationController
       end
       UserParty.create!(user_id: session[:user_id], party_id: party.id)
 
-      redirect_to user_path(session[:user_id])
+      redirect_to dashboard_path
     else
       flash[:error] = party.errors.full_messages.join(', ')
       redirect_to movie_viewing_party_new_path(params[:movie_id])
