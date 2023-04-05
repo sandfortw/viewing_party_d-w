@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class PartiesController < ApplicationController
-
   def new
     if current_user
       @movie = MovieService.get_movie(params[:movie_id])
