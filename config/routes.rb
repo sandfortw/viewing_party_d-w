@@ -2,20 +2,18 @@
 
 Rails.application.routes.draw do
   root 'home#index'
+
+  resources :users, only: :create
   get '/register', to: 'users#new'
-  resources :users, only: %i[create]
   get '/dashboard', to: 'users#show'
+  get '/login', to: 'users#login_form'
+  post '/login', to: 'users#login_user'
+  get '/logout', to: 'users#logout_user'
 
   resources :movies, only: %i[index show] do
     get '/viewing-party/new', to: 'parties#new' # refactor?
     resources :parties, only: %i[create]
   end
-  get '/login', to: 'users#login_form'
-  post '/login', to: 'users#login_user'
-  get '/logout', to: 'users#logout_user'
-
-  get '/dashboard', to: 'users#show'
 
   get '/discover', to: 'discover#index'
 end
-

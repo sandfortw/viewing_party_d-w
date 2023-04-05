@@ -18,7 +18,6 @@ RSpec.describe 'Viewing Party New Page' do
     end
   end
   context 'viewing party details form' do
-    
     it 'has a title' do
       expect(page).to have_content('Viewing Party Details')
       expect(page).to have_content('Create a Movie Party for Shrek')

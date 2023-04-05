@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     if session[:user_id]
       @user = User.find(session[:user_id])
     else
-      flash[:message] = "You must be logged in or registered to access your dashboard."
+      flash[:message] = 'You must be logged in or registered to access your dashboard.'
       redirect_to root_path
     end
   end
@@ -25,40 +25,27 @@ class UsersController < ApplicationController
     end
   end
 
-  def login_form
+  def login_form; end
 
+  def login_user
+    user = User.find_by(email: params[:email])
+    if user.authenticate(params[:password])
+      session[:user_id] = user.id
+      flash[:success] = "Welcome, #{user.name}!"
+      redirect_to dashboard_path
+    else
+      flash[:error] = 'Sorry, your credentials are bad.'
+      redirect_to login_path
+    end
   end
 
-def login_user
-  user = User.find_by(email: params[:email])
-  if user.authenticate(params[:password])
-    session[:user_id] = user.id
-    flash[:success] = "Welcome, #{user.name}!"
-    redirect_to dashboard_path
-  else
-    flash[:error] = "Sorry, your credentials are bad."
-    redirect_to login_path
+  def logout_user
+    user = User.find(session[:user_id])
+    flash[:success] = "#{user.name} logged out"
+    session.delete(:user_id)
+    redirect_to root_path
   end
-end
 
-def logout_user
-  user = User.find(session[:user_id])
-  flash[:success] = "#{user.name} logged out"
-  # session[:user_id] = nil
-  # reset_session
-  session.delete(:user_id)
-  redirect_to root_path
-end
-
-# def dashboard
-#   if session[:user_id]
-#     user = User.find(session[:user_id])
-#     redirect_to user_path(user)
-#   else
-#     flash[:message] = "You must be logged in or registed to access your dashboard."
-#     redirect_to root_path
-#   end
-# end
   private
 
   def user_params

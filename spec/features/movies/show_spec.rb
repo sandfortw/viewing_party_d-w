@@ -3,16 +3,28 @@
 require 'rails_helper'
 
 describe 'movie details page' do
+  describe 'visitor experience', :vcr do
+    before do
+      reset_session!
+      visit movie_path(808)
+    end
+    it 'should flash a message when creating a party as a guest' do
+      expect(page).to_not have_content('You must be logged in or registered to create a viewing party')
+      click_on 'Create Viewing Party for Shrek'
+      expect(current_path).to eq(movie_path(808))
+      expect(page).to have_content('You must be logged in or registered to create a viewing party')
+    end
+  end
   before do
     VCR.use_cassette('Shrek') do
       @user = User.create!(name: 'Donkey', email: 'donkey@swampify.com', password: 'password')
       visit root_path
-    click_on 'Log In'
-    fill_in 'email', with: @user.email
-    fill_in 'password', with: @user.password
-    click_on 'Log In'
-    visit root_path
-      visit movie_path( 808)
+      click_on 'Log In'
+      fill_in 'email', with: @user.email
+      fill_in 'password', with: @user.password
+      click_on 'Log In'
+      visit root_path
+      visit movie_path(808)
     end
   end
 
@@ -41,7 +53,7 @@ describe 'movie details page' do
 
     it 'when the button is clicked, it goes somewhere else', :vcr do
       click_button('Create Viewing Party for Shrek')
-      expect(current_path).to eq("/movies/808/viewing-party/new")
+      expect(current_path).to eq('/movies/808/viewing-party/new')
     end
   end
 

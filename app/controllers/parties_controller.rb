@@ -7,7 +7,7 @@ class PartiesController < ApplicationController
       @user = User.find(session[:user_id])
       @users = User.where.not(id: @user.id)
     else
-      flash[:notice] = "You must be logged in or registered to create a viewing party"
+      flash[:notice] = 'You must be logged in or registered to create a viewing party'
       redirect_to movie_path(params[:movie_id])
     end
   end

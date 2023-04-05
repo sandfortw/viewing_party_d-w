@@ -83,7 +83,6 @@ describe 'the user new page' do
       expect(current_path).to eq(register_path)
       expect(page).to have_content('Passwords do not match')
     end
-  
   end
 
   describe 'authentication' do
