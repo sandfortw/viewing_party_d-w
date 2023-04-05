@@ -5,11 +5,7 @@ require 'rails_helper'
 describe 'user dashboard (show page)', :vcr do
   before do
     @user = User.create!(name: 'Homer', email: 'Homer@springfield.com', password: 'password')
-    visit root_path
-    click_on 'Log In'
-    fill_in('email', with: @user.email)
-    fill_in('password', with: @user.password)
-    click_on 'Log In'
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
     visit dashboard_path
   end
 
