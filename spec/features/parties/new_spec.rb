@@ -7,12 +7,7 @@ RSpec.describe 'Viewing Party New Page' do
     @user_1 = User.create!(name: 'Homer', email: 'Homer@springfield.com', password: 'password')
     @user_2 = User.create!(name: 'Krusty', email: 'Krusty@springfield.com', password: 'password')
     @user_3 = User.create!(name: 'Mr.Burns', email: 'CEO@springfield.com', password: 'password')
-    visit root_path
-    click_on 'Log In'
-    fill_in 'email', with: @user_1.email
-    fill_in 'password', with: @user_1.password
-    click_on 'Log In'
-    visit root_path
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user_1)
     VCR.use_cassette('Shrek') do
       visit movie_viewing_party_new_path(808)
     end
