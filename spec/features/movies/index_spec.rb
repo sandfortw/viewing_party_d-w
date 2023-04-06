@@ -7,12 +7,12 @@ describe 'movies page' do
     before do
       VCR.use_cassette('top_20') do
         @user = User.create!(name: 'Homer', email: 'Homer@springfield.com', password: 'password123', password_confirmation: 'password123')
-        visit user_discover_path(@user)
+        visit discover_path
         click_button 'Find Top Rated Movies'
       end
     end
     it 'should have the title of the top 20 movies (3)' do
-      expect(current_path).to eq(user_movies_path(@user))
+      expect(current_path).to eq(movies_path)
       expect(page).to have_link('The Godfather')
       expect(page).to have_link('The Shawshank Redemption')
       expect(page).to have_link('Cuando Sea Joven')
@@ -20,7 +20,7 @@ describe 'movies page' do
 
     it 'a title links to its show page', :vcr do
       click_link('The Godfather')
-      expect(current_path).to eq(user_movie_path(@user, 238))
+      expect(current_path).to eq(movie_path(238))
     end
 
     it 'has 20 results' do
@@ -36,7 +36,7 @@ describe 'movies page' do
     it 'should have a button that links to the Discover Movies page' do
       expect(page).to have_button('Discover Movies')
       click_button('Discover Movies')
-      expect(current_path).to eq(user_discover_path(@user))
+      expect(current_path).to eq(discover_path)
     end
   end
 
@@ -44,7 +44,7 @@ describe 'movies page' do
     before do
       VCR.use_cassette('Forrest Gump') do
         @user = User.create!(name: 'Homer', email: 'Homer@springfield.com', password: 'password123', password_confirmation: 'password123')
-        visit user_discover_path(@user)
+        visit discover_path
         fill_in :search, with: 'Forrest Gump'
         click_button 'Find Movies'
       end
@@ -56,7 +56,7 @@ describe 'movies page' do
 
     it 'each results should be a link', :vcr do
       click_link('Forrest Gump')
-      expect(current_path).to eq(user_movie_path(@user, 13))
+      expect(current_path).to eq(movie_path(13))
     end
 
     it 'should have multiple results' do
@@ -67,7 +67,7 @@ describe 'movies page' do
     it 'should have a button that links to the Discover Movies page' do
       expect(page).to have_button('Discover Movies')
       click_button('Discover Movies')
-      expect(current_path).to eq(user_discover_path(@user))
+      expect(current_path).to eq(discover_path)
     end
   end
 
@@ -75,7 +75,7 @@ describe 'movies page' do
     before do
       VCR.use_cassette('F Search') do
         @user = User.create!(name: 'Homer', email: 'Homer@springfield.com', password: 'password123', password_confirmation: 'password123')
-        visit user_discover_path(@user)
+        visit discover_path
         fill_in :search, with: 'F'
         click_button 'Find Movies'
       end

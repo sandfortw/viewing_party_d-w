@@ -7,8 +7,18 @@ RSpec.describe 'Viewing Party New Page' do
     @user_1 = User.create!(name: 'Homer', email: 'Homer@springfield.com', password: 'password123', password_confirmation: 'password123')
     @user_2 = User.create!(name: 'Krusty', email: 'Krusty@springfield.com', password: 'password123', password_confirmation: 'password123')
     @user_3 = User.create!(name: 'Mr.Burns', email: 'CEO@springfield.com', password: 'password123', password_confirmation: 'password123')
+
+    visit '/login'
+    click_on "Log In"
+
+    fill_in :email, with: @user_1.email
+    fill_in :password, with: @user_1.password
+    fill_in :password_confirmation, with: @user_1.password_confirmation
+
+    click_on "Log In"
+    
     VCR.use_cassette('Shrek') do
-      visit user_movie_viewing_party_new_path(@user_1.id, 808)
+      visit movie_viewing_party_new_path(808)
     end
   end
   context 'viewing party details form' do
@@ -64,7 +74,7 @@ RSpec.describe 'Viewing Party New Page' do
 
       click_button 'Create Party'
 
-      expect(current_path).to eq(user_path(@user_1))
+      expect(current_path).to eq(dashboard_path)
     end
   end
 
@@ -72,7 +82,7 @@ RSpec.describe 'Viewing Party New Page' do
     it 'does not allow the user to submit a form with empty fields', :vcr do
       click_button 'Create Party'
 
-      expect(current_path).to eq(user_movie_viewing_party_new_path(@user_1.id, 808))
+      expect(current_path).to eq(movie_viewing_party_new_path(808))
 
       expect(page).to have_content("Time can't be blank")
     end

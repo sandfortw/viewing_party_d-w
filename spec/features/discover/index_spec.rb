@@ -5,7 +5,7 @@ require 'rails_helper'
 describe 'discover movies page' do
   before do
     @user = User.create!(name: 'Homer', email: 'Homer@springfield.com', password: 'password123', password_confirmation: 'password123')
-    visit user_discover_path(@user)
+    visit discover_path
   end
 
   it 'should have a header' do
@@ -20,7 +20,7 @@ describe 'discover movies page' do
     it 'when clicked it should take us to movie results' do
       VCR.use_cassette('top_20') do
         click_button 'Find Top Rated Movies'
-        expect(current_path).to eq(user_movies_path(@user))
+        expect(current_path).to eq(movies_path)
       end
     end
   end
@@ -43,7 +43,7 @@ describe 'discover movies page' do
       VCR.use_cassette('search_test') do
         fill_in :search, with: 'Test'
         click_button 'Find Movies'
-        expect(current_path).to eq(user_movies_path(@user))
+        expect(current_path).to eq(movies_path)
       end
     end
 
@@ -51,7 +51,7 @@ describe 'discover movies page' do
       VCR.use_cassette('search_test') do
         fill_in :search, with: ''
         click_button 'Find Movies'
-        expect(current_path).to eq(user_discover_path(@user))
+        expect(current_path).to eq(discover_path)
         expect(page).to have_content('Field cannot be blank')
       end
     end
