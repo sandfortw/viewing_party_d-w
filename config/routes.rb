@@ -16,4 +16,9 @@ Rails.application.routes.draw do
   end
 
   get '/discover', to: 'discover#index'
+
+  namespace :admin do 
+    get '/dashboard', to: 'dashboard#index'
+    resources :users, only: :show
+  end
 end
