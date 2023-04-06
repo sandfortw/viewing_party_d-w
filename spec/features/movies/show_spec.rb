@@ -6,7 +6,7 @@ describe 'movie details page' do
   before do
     VCR.use_cassette('Shrek') do
       @user = User.create!(name: 'Donkey', email: 'donkey@swampify.com', password: 'password123', password_confirmation: 'password123')
-      visit user_movie_path(@user, 808)
+      visit movie_path(808)
     end
   end
 
@@ -34,8 +34,18 @@ describe 'movie details page' do
     end
 
     it 'when the button is clicked, it goes somewhere else', :vcr do
+      visit '/login'
+      click_on "Log In"
+
+      fill_in :email, with: @user.email
+      fill_in :password, with: @user.password
+      fill_in :password_confirmation, with: @user.password_confirmation
+
+      click_on "Log In"
+
+      visit movie_path(808)
       click_button('Create Viewing Party for Shrek')
-      expect(current_path).to eq("/users/#{@user.id}/movies/808/viewing-party/new")
+      expect(current_path).to eq("/movies/808/viewing-party/new")
     end
   end
 
@@ -77,6 +87,17 @@ describe 'movie details page' do
     it 'should have a count of the number of reviews' do
       within('#reviews') do
         expect(page).to have_content('Review Count: 3')
+      end
+    end
+  end
+
+  describe 'Auth Challenge (movie show)' do
+    context 'As a visitor' do
+      it 'does not allow me to create a viewing party if I am not logged in', :vcr do
+        click_button "Create Viewing Party for Shrek"
+
+        expect(page).to have_content("You must be logged in or registered to create a movie party.")
+        expect(current_path).to eq(movie_path(808))
       end
     end
   end
