@@ -5,7 +5,15 @@ require 'rails_helper'
 describe 'user dashboard (show page)', :vcr do
   before do
     @user = User.create!(name: 'Homer', email: 'Homer@springfield.com', password: 'password123', password_confirmation: 'password123')
-    visit user_path(@user)
+    visit '/login'
+    click_on "Log In"
+
+    fill_in :email, with: @user.email
+    fill_in :password, with: @user.password
+    fill_in :password_confirmation, with: @user.password_confirmation
+
+    click_on "Log In"
+    visit dashboard_path
   end
 
   it 'has a header' do
@@ -23,7 +31,7 @@ describe 'user dashboard (show page)', :vcr do
 
     it 'links to a user\'s discover page' do
       click_button 'Discover Movies'
-      expect(current_path).to eq(user_discover_path(@user))
+      expect(current_path).to eq(discover_path)
     end
   end
 
@@ -33,14 +41,14 @@ describe 'user dashboard (show page)', :vcr do
       party = Party.create!(movie_id: 808, host_id: @user_2.id, date: '2023-01-01', time: '12:00', duration: 180)
       UserParty.create!(user_id: @user.id, party_id: party.id)
       UserParty.create!(user_id: @user_2.id, party_id: party.id)
-      visit user_path(@user)
+      visit dashboard_path
     end
 
     it 'should have the title for the party, which links to its show page', :vcr do
       within('#movie_808') do
         expect(page).to have_link('Shrek')
         click_link 'Shrek'
-        expect(current_path).to eq(user_movie_path(@user, 808))
+        expect(current_path).to eq(movie_path(808))
       end
     end
 
@@ -81,7 +89,7 @@ describe 'user dashboard (show page)', :vcr do
       party = Party.create!(movie_id: 808, host_id: @user.id, date: '2023-01-01', time: '12:00', duration: 180)
       UserParty.create!(user_id: @user.id, party_id: party.id)
       UserParty.create!(user_id: @user_2.id, party_id: party.id)
-      visit user_path(@user)
+      visit dashboard_path
     end
 
     it 'says that I am host of the party' do
@@ -105,7 +113,7 @@ describe 'user dashboard (show page)', :vcr do
       UserParty.create!(user_id: @user.id, party_id: godfather_party.id)
       UserParty.create!(user_id: @bart.id, party_id: godfather_party.id)
       UserParty.create!(user_id: @lisa.id, party_id: godfather_party.id)
-      visit user_path(@user)
+      visit dashboard_path
     end
 
     it 'displays multiple parties' do
@@ -135,6 +143,21 @@ describe 'user dashboard (show page)', :vcr do
       within('#movie_238') do
         expect(page).to_not have_content('I am Hosting')
         expect(page).to have_content('Host is Lenny')
+      end
+    end
+  end
+
+  describe 'Auth Challenge (dashboard)' do
+    context 'As a visitor' do
+      before do
+        visit root_path
+
+        click_on "Log Out"
+      end
+      it 'does not allow access to the dashboard if the user is not signed in' do
+        visit dashboard_path
+        expect(page).to have_content("You must be logged in or register to access your dashboard.")
+        expect(current_path).to eq(root_path)
       end
     end
   end
