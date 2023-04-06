@@ -21,18 +21,40 @@ describe 'home page' do
     expect(current_path).to eq(register_path)
   end
 
-  it 'lists the existing users which links to the user\'s dashboard' do
-    expect(page).to have_link('Dawson')
-    expect(page).to have_link('Weston')
-    expect(page).to have_link('Homer')
-    expect(page).to have_link('Marge')
-    click_link('Dawson')
-    expect(current_path).to eq(user_path(@user_1.id))
-  end
-
-  it 'has a link back to the landing page (the current page)' do # TODO: make a layout test
+  it 'has a link back to the landing page (the current page)' do
     expect(page).to have_link('Home')
     click_link('Home')
     expect(current_path).to eq(root_path)
+  end
+
+  context 'Auth challenge' do
+    context 'as a visitor' do
+      it 'does not show the list of existing users' do
+        expect(page).to_not have_content(@user_1.email)
+        expect(page).to_not have_content(@user_2.email)
+        expect(page).to_not have_content(@user_3.email)
+        expect(page).to_not have_content(@user_4.email)
+      end
+    end
+    
+    context 'as a registered user' do
+      before do
+        click_on "Log In"
+
+        fill_in :email, with: @user_1.email
+        fill_in :password, with: @user_1.password
+        fill_in :password_confirmation, with: @user_1.password_confirmation
+
+        click_on "Log In"
+
+        visit root_path
+      end
+      it 'shows a list of all the existing users emails' do
+        expect(page).to have_content(@user_1.email)
+        expect(page).to have_content(@user_2.email)
+        expect(page).to have_content(@user_3.email)
+        expect(page).to have_content(@user_4.email)
+      end
+    end
   end
 end
